@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -123,7 +124,7 @@ public class UserActions {
 
     }
 
-    public void scrollDownInPage(String key) {
+    public void scrollToElement(String key) {
 
         WebElement Element = driver.findElement(By.xpath(key));
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -131,7 +132,6 @@ public class UserActions {
         js.executeScript("arguments[0].scrollIntoView();", Element);
 
     }
-
     public void scrollDown(int pixels) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, " + pixels + ");");
@@ -143,15 +143,11 @@ public class UserActions {
     }
 
     public void mouseHoverBy(String key) {
-
         String xpath = (Utils.getUIMappingByKey(key));
         WebElement ele = driver.findElement(By.xpath(xpath));
 
         Actions action = new Actions(driver);
-
         action.moveToElement(ele).perform();
-        ele.click();
-
 
     }
 

@@ -17,10 +17,10 @@
 - Ensure that the Database server and the WEAre project are running.
 
 **1. Location of API Tests**
-- API Tests are located under the `api.socialnetwork.tests` package.
+- API Tests are located under the `apitests.socialnetwork.tests` package.
 
 **2. Running API Tests Suite**
-- To run the API test suite, right-click on the `api-testsuite.xml` file and select "Run."
+- To run the API test suite, right-click on the `apitests-testsuite.xml` file and select "Run."
 
 **3. Generating HTML Report**
 - An HTML report named `emailable-report.html` will be generated under the `test-output` directory.
@@ -32,7 +32,7 @@
 - Ensure that the Database server and the WEAre project are running.
 
 **1. Location of UI Tests**
-- UI Tests are located under the `ui.socialnetwork.tests` package.
+- UI Tests are located under the `uitests.socialnetwork.tests` package.
 
 **2. Running UI Tests Suite**
 - Select step 2 or step 3. To run the UI test suite, navigate to your cloned repository on your local machine. Or directly run it in the
@@ -43,7 +43,7 @@
 
 **4. Generating Report**
 - The test report will be generated in the `T-H-K\TestAutomationFramework\target\site\surefire-report.html` file.
-- Latest report is `ui-selenium-report-surefire-report.html`
+- Latest report is `uitests-selenium-report-surefire-report.html`
 
 ## Running Instructions for API Security Test
 
