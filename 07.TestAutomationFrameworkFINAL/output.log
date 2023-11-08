@@ -1,17 +1,30 @@
-2023-11-08 22:02:42,054 INFO  [main] Initializing WebDriver
-2023-11-08 22:02:50,668 INFO  [main] Initializing WebDriver
-2023-11-08 22:02:51,692 INFO  [main] Initializing WebDriver
-2023-11-08 22:02:51,693 INFO  [main] Initializing WebDriver
-2023-11-08 22:02:51,693 INFO  [main] Initializing WebDriver
-2023-11-08 22:02:51,693 INFO  [main] Initializing WebDriver
-2023-11-08 22:02:55,778 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-08 22:02:55,975 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-08 22:02:56,137 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-08 22:02:58,024 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='iPhone'])[1]
-2023-11-08 22:03:00,742 INFO  [main] Clicking on element //*[@title='Add to Cart']/../../../../div/button[@title='Compare this Product']
-2023-11-08 22:03:03,594 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-08 22:03:03,741 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-08 22:03:03,885 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-08 22:03:05,433 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='HTC Touch HD'])[1]
-2023-11-08 22:03:07,077 INFO  [main] Clicking on element //*[@title='Add to Cart']/../../../../div/button[@title='Compare this Product']
-2023-11-08 22:03:08,003 INFO  [main] Clicking on element //a[@class='btn btn-secondary btn-block']
+2023-11-08 23:36:12,523 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:17,221 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:19,808 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:19,808 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:19,809 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:19,809 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:21,145 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:21,247 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:21,372 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:22,665 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='iPhone'])[1]
+2023-11-08 23:36:24,973 INFO  [main] Clicking on element //*[@title='Add to Cart']/../../../../div/button[@title='Compare this Product']
+2023-11-08 23:36:26,854 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:26,911 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:26,986 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:27,770 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='HTC Touch HD'])[1]
+2023-11-08 23:36:28,409 INFO  [main] Clicking on element //*[@title='Add to Cart']/../../../../div/button[@title='Compare this Product']
+2023-11-08 23:36:29,074 INFO  [main] Clicking on element //a[@class='btn btn-secondary btn-block']
+2023-11-08 23:36:30,177 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:31,022 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:31,022 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:31,022 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:31,022 INFO  [main] Initializing WebDriver
+2023-11-08 23:36:32,267 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:32,324 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:32,391 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-08 23:36:33,336 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='Canon EOS 5D'])[1]
+2023-11-08 23:36:34,339 INFO  [main] Clicking on element //select[@id='input-option230-216836']
+2023-11-08 23:36:34,426 INFO  [main] Clicking on element //select[@id='input-option230-216836']
+2023-11-08 23:36:34,521 INFO  [main] Clicking on element //select[@id='input-option230-216836']
+2023-11-08 23:36:35,203 INFO  [main] Clicking on element (//button[@title='Add to Cart'])[2]

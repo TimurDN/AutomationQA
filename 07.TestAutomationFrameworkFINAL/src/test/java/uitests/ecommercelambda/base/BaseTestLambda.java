@@ -33,10 +33,10 @@ public class BaseTestLambda {
         productsPageLambda = new ProductsPageLambda(driver);
     }
 
-//    @AfterEach
-//    public void tearDown() {
-//        UserActions.quitDriver();
-//    }
+    @AfterEach
+    public void tearDown() {
+        UserActions.quitDriver();
+    }
 
     public static void registerUser(String firstName,String lastName, String email, String password) {
         registerPageLambda.registerUser(firstName, lastName, email, password);

@@ -14,9 +14,21 @@ public class ProductsPageLambda extends BasePageLambda {
         actions.clickElement("//*[@title='Add to Cart']/../../../../div/button[@title='Compare this Product']");
     }
 
-    public void clickOnCompareButton(){
+    public void clickOnCompareButton() {
         actions.waitForElementClickable("//a[@class='btn btn-secondary btn-block']");
         actions.clickElement("//a[@class='btn btn-secondary btn-block']");
+    }
+
+    public void addToCartFromProductPage() {
+        actions.waitForElementClickable("(//button[@title='Add to Cart'])[2]");
+        actions.clickElement("(//button[@title='Add to Cart'])[2]");
+    }
+
+    public void selectProductSize() {
+        actions.waitForElementClickable("//select[@id='input-option230-216836']");
+        actions.clickElement("//select[@id='input-option230-216836']");
+        actions.keyboardActionArrowDown("//select[@id='input-option230-216836']");
+        actions.keyboardActionEnter("//select[@id='input-option230-216836']");
     }
 
     public boolean assertProductAddedToCompareListMessage(String name) {
@@ -25,5 +37,39 @@ public class ProductsPageLambda extends BasePageLambda {
                 .getText().contains(String.format("You have added\n%s", name));
     }
 
+    public boolean assertProductAddedToCartListMessage(String name) {
+        actions.waitForElementVisible("//*[contains(text(),'Success:')]");
+        return driver.findElement(By.xpath("//*[contains(text(),'Success:')]"))
+                .getText().contains(String.format("You have added\n%s", name));
+    }
+
+    public void assertComparisonPageNavigated() {
+        actions.waitForElementVisible("//div[@id='content']/h1[@class='h4']");
+        actions.assertElementVisible("//div[@id='content']/h1[@class='h4']");
+    }
+
+    public void assertComparedProductName1(String name) {
+        actions.waitForElementVisible(String.format("//strong[contains(text(),'%s')]", name));
+        actions.assertElementPresent(String.format("//strong[contains(text(),'%s')]", name));
+    }
+
+    public void assertComparedProductName2(String name) {
+        actions.waitForElementVisible(String.format("//strong[contains(text(),'%s')]", name));
+        actions.assertElementPresent(String.format("//strong[contains(text(),'%s')]", name));
+    }
+
+    public void assertComparedCorrectPriceOfProduct1(String price) {
+        actions.waitForElementVisible(String.format
+                ("//td[text()='Price']/following-sibling::td[contains(text(), '%s')]", price));
+        actions.assertElementPresent(String.format
+                ("//td[text()='Price']/following-sibling::td[contains(text(), '%s')]", price));
+    }
+
+    public void assertComparedCorrectPriceOfProduct2(String price) {
+        actions.waitForElementVisible(String.format
+                ("//td[text()='Price']/following-sibling::td[contains(text(), '%s')]", price));
+        actions.assertElementPresent(String.format
+                ("//td[text()='Price']/following-sibling::td[contains(text(), '%s')]", price));
+    }
 
 }
