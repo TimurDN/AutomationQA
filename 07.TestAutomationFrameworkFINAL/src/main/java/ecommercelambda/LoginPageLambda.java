@@ -8,26 +8,50 @@ public class LoginPageLambda extends BasePage {
         super(driver, "lambda.login.page");
     }
 
-    public void loginUser(String username, String password) {
+    public void loginUser(String email, String password) {
 
         navigateToPage();
 
-        actions.waitForElementVisible("login.page.username");
-        actions.typeValueInField(username, "login.page.username");
+        actions.waitForElementVisible("login.page.emailField");
+        actions.typeValueInField(email, "login.page.emailField");
 
-        actions.waitForElementVisible("login.page.password");
-        actions.typeValueInField(password, "login.page.password");
+        actions.waitForElementVisible("login.page.passwordField");
+        actions.typeValueInField(password, "login.page.passwordField");
 
-        actions.clickElement("login.submit.button");
+        actions.clickElement("login.submit.buttonField");
 
-        actions.waitForElementVisible("header.member.menu.button");
     }
 
-    public void assertAdminAuthenticatedUser() {
-        actions.assertElementPresent("header.admin.member.button");
+    public void loginUserWithInvalidPassword(String email, String password) {
+
+        navigateToPage();
+
+        actions.waitForElementVisible("login.page.emailField");
+        actions.typeValueInField(email, "login.page.emailField");
+
+        actions.waitForElementVisible("login.page.passwordField");
+        actions.typeValueInField(password, "login.page.passwordField");
+
+        actions.clickElement("login.submit.buttonField");
+
     }
+
+
+
 
     public void assertAuthenticatedUser() {
-        actions.assertElementPresent("header.member.menu.button");
+        actions.assertElementPresent("login.page.myAccountButton");
+    }
+
+    public void assertAuthenticationError() {
+        actions.assertElementPresent("login.page.failedLoginExclamation");
+    }
+
+    public void assertLoginFormElementsDisplayed() {
+
+        actions.assertElementPresent("login.page.emailField");
+        actions.assertElementPresent("login.page.passwordField");
+        actions.assertElementPresent("login.submit.buttonField");
+
     }
 }

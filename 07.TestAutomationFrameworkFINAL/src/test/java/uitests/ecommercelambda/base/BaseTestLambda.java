@@ -38,8 +38,8 @@ public class BaseTestLambda {
 //        UserActions.quitDriver();
 //    }
 
-    public static void registerUser(String firstName,String lastName, String password) throws InterruptedException {
-        registerPageLambda.registerUser(firstName, lastName, password);
+    public static void registerUser(String firstName,String lastName, String email, String password) {
+        registerPageLambda.registerUser(firstName, lastName, email, password);
     }
 
     public static void loginUser(String username, String password) {

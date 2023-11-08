@@ -1,0 +1,10 @@
+2023-11-08 13:59:37,778 INFO  [main] Initializing WebDriver
+2023-11-08 13:59:42,136 INFO  [main] Initializing WebDriver
+2023-11-08 13:59:44,837 INFO  [main] Initializing WebDriver
+2023-11-08 13:59:44,837 INFO  [main] Initializing WebDriver
+2023-11-08 13:59:44,837 INFO  [main] Initializing WebDriver
+2023-11-08 13:59:46,894 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-08 13:59:49,701 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-08 13:59:49,811 INFO  [main] Clicking on element register.page.continueButton
+2023-11-08 13:59:51,317 INFO  [main] Clicking on element //a[contains(@href, 'logout')]
+2023-11-08 13:59:53,609 INFO  [main] Clicking on element login.submit.buttonField

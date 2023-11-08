@@ -1,5 +1,6 @@
 package ecommercelambda;
 
+import com.github.javafaker.Faker;
 import com.telerikacademy.pages.BasePage;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +10,7 @@ public class RegisterPageLambda extends BasePage {
         super(driver, "lambda.register.page");
     }
 
-    public void registerUser(String generateFirstName,String generateLastName,String generatePassword) {
+    public void registerUser(String generateFirstName,String generateLastName,String generateEmail, String generatePassword) {
         navigateToPage();
 
         actions.waitForElementClickable("register.page.firstNameField");
@@ -19,7 +20,7 @@ public class RegisterPageLambda extends BasePage {
         actions.typeValueInField(generateLastName, "register.page.lastNameField");
 
         actions.waitForElementClickable("register.page.emailField");
-        actions.typeValueInField("test@abv.bg", "register.page.emailField");
+        actions.typeValueInField(generateEmail, "register.page.emailField");
 
         actions.waitForElementClickable("register.page.phoneField");
         actions.typeValueInField("151517815454", "register.page.phoneField");
@@ -31,9 +32,8 @@ public class RegisterPageLambda extends BasePage {
         actions.typeValueInField(generatePassword, "register.page.confirmPasswordField");
 
         actions.scrollToElement("//input[@id='input-agree']");
-        actions.waitForElementVisible("register.page.privacyPolicyField");
-        actions.waitForElementClickable("register.page.privacyPolicyField");
-        actions.clickElement("register.page.privacyPolicyField");
+        actions.waitForElementClickable("//body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]");
+        actions.clickElement("//body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]");
 
         actions.waitForElementClickable("register.page.continueButton");
         actions.clickElement("register.page.continueButton");
@@ -48,6 +48,11 @@ public class RegisterPageLambda extends BasePage {
     public String generatePassword() {
         String randomPass = RandomStringUtils.randomAlphabetic(5);
         return "password" + randomPass;
+    }
+
+    public String generateEmail() {
+        Faker faker = new Faker();
+        return faker.internet().emailAddress();
     }
 
     public void assertSuccessfulRegistration() {

@@ -1,5 +1,6 @@
 package uitests.ecommercelambda.tests;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
 
@@ -8,6 +9,17 @@ public class RegisterPageTests extends BaseTestLambda {
     String firstName = "";
     String lastName = "";
     String password = "";
+    String email = "";
+
+    @BeforeEach
+    public void beforeTestSetup(){
+
+        firstName += registerPageLambda.generateUser();
+        lastName += registerPageLambda.generateUser();
+        password += registerPageLambda.generatePassword();
+        email += registerPageLambda.generateEmail();
+
+    }
 
     @Test
     public void testRegisterFormAccessTest() {
@@ -22,13 +34,9 @@ public class RegisterPageTests extends BaseTestLambda {
     public void registerUserWithMandatoryFieldsTest() {
         homePageLambda.navigateToPage();
         homePageLambda.navigateToRegisterButton();
+        registerPageLambda.registerUser(firstName, lastName, email, password);
 
-        firstName += registerPageLambda.generateUser();
-        lastName += registerPageLambda.generateUser();
-        password += registerPageLambda.generatePassword();
-
-        registerPageLambda.registerUser(firstName, lastName, password);
-
+        registerPageLambda.assertSuccessfulRegistration();
     }
 
     @Test
