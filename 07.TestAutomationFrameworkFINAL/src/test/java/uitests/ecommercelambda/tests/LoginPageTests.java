@@ -12,7 +12,7 @@ public class LoginPageTests extends BaseTestLambda {
     String email = "";
 
     @BeforeEach
-    public void beforeTestSetup(){
+    public void beforeTestSetup() {
 
         firstName += registerPageLambda.generateUser();
         lastName += registerPageLambda.generateUser();
@@ -24,7 +24,7 @@ public class LoginPageTests extends BaseTestLambda {
     }
 
     @Test
-    public void loginFormAccessTest(){
+    public void loginFormAccessTest() {
         homePageLambda.navigateToLoginButton();
 
         loginPageLambda.assertLoginFormElementsDisplayed();
@@ -32,23 +32,23 @@ public class LoginPageTests extends BaseTestLambda {
     }
 
     @Test
-    public void loginWithValidCredentials(){
+    public void loginWithValidCredentials() {
         homePageLambda.navigateToRegisterButton();
-        registerPageLambda.registerUser(firstName,lastName,email,password);
+        registerPageLambda.registerUser(firstName, lastName, email, password);
         homePageLambda.navigateToLogoutButton();
 
-        loginPageLambda.loginUser(email,password);
+        loginPageLambda.loginUser(email, password);
         loginPageLambda.assertAuthenticatedUser();
 
     }
 
     @Test
-    public void loginWithValidUsernameAndInvalidPassword(){
+    public void loginWithValidUsernameAndInvalidPassword() {
         homePageLambda.navigateToRegisterButton();
-        registerPageLambda.registerUser(firstName,lastName,email,password);
+        registerPageLambda.registerUser(firstName, lastName, email, password);
         homePageLambda.navigateToLogoutButton();
 
-        loginPageLambda.loginUserWithInvalidPassword(email,"010010a");
+        loginPageLambda.loginUserWithInvalidPassword(email, "010010a");
         loginPageLambda.assertAuthenticationError();
 
 

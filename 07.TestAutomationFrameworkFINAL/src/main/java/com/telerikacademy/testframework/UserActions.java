@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -132,6 +131,7 @@ public class UserActions {
         js.executeScript("arguments[0].scrollIntoView();", Element);
 
     }
+
     public void scrollDown(int pixels) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, " + pixels + ");");
@@ -191,6 +191,7 @@ public class UserActions {
         Assertions.assertNotNull(driver.findElement(By.xpath(Utils.getUIMappingByKey(locator))),
                 format("Element with %s doesn't present.", locator));
     }
+
 
     public void assertValueIncreasedBy(int actual, int expected) {
         Assertions.assertEquals(actual, expected, String.format("Actual value: %s is not equal to the expected value: %s one.",

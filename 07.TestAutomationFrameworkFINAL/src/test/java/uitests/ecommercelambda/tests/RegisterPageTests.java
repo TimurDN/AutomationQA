@@ -12,7 +12,7 @@ public class RegisterPageTests extends BaseTestLambda {
     String email = "";
 
     @BeforeEach
-    public void beforeTestSetup(){
+    public void beforeTestSetup() {
 
         firstName += registerPageLambda.generateUser();
         lastName += registerPageLambda.generateUser();
