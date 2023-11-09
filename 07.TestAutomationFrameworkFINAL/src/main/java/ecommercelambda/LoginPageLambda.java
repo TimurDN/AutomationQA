@@ -36,9 +36,6 @@ public class LoginPageLambda extends BasePage {
 
     }
 
-
-
-
     public void assertAuthenticatedUser() {
         actions.assertElementPresent("login.page.myAccountButton");
     }

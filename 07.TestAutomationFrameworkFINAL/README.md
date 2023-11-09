@@ -1,123 +1,126 @@
 # High-level Test Case Automation Strategy
 
----
+**Note:**
+- Test cases marked with (*) are to be automated for the interview.
 
-- Note: An asterisk "*" indicates test cases to be automated for the interview.
+## Priority Summary
 
----
+- **Highest Priority Test Cases:** 45
+  - Automated: 17 (completed in 5 days)
+  - Pending: 28
 
-### Highest Priority Test Cases (44)
-- Automated: 19
-- Pending: 24
+- **High Priority Test Cases:** 13
+  - Pending for Manual & Automation
 
-### High Priority Test Cases (16)
-- Pending for Manual & Automation
+- **Medium Priority Test Cases:** 19
+  - Pending Manual
 
-### Medium Priority Test Cases (16)
-- Pending Manual
+## Estimated Timeline
 
----------------------------------------------------------------------------
-HomePage
+- **Estimated remaining time for completion of all tasks:** 10-12 business days
 
-	->homePageNavigatedTest(Highest)*
-	->imagesInHomePageVisibleTest(Highest)
-	->scrollBarFunctionalityToSpecificElementTest(Highest)
+## Test Case Overview
 
-	-Search Bar Functionalities
+## Total Cases: 77
 
-		->searchExistingProductTest(Highest)*
-		->productSuggestionDisplaysWhenLetterTypedTest(Medium)
-		->searchWithCategoryAndProductTest(Highest)
-		->allTypesDisplayedWhenAllCategorySelectedTest(High)
-		->selectedCategoryFromSearchDisplaysRespectiveItemsTest(Highest)
+------
 
-	-HomePage Buttons Visibilities & Functionalities (Manually to be tested)
+### HomePage
 
-		-Shop By Category button(Medium)
-		-Home button(Medium)
-		-Special button(Medium)
-		-Blog button(Medium)
-		-Mega Menu button(High)
-		-AddOns button(High)
-		-My Account button(High)
-			-Login button(Highest)(Automated)
-				->loginFormDisplayedWhenLoginButtonClicked(Highest)
-			-Register button(Highest)(Automated)
-				->registerFormDisplayedWhenRegisterButtonClicked(Highest)
-		-Compare(Medium)
-		-Wishlist(Medium)
-			->Wishlist number increases when product added(Medium)
-			->Wishlist number decreases when product removed(Medium)
-		-Cart(Medium)
-			->Cart number increases when product added(Medium)
-			->Cart number decreases when product removed(Medium)
+#### General Tests
+- `homePageNavigatedTest(Highest)*`
+- `imagesInHomePageVisibleTest(Highest)`
+- `scrollBarFunctionalityToSpecificElementTest(Highest)`
 
-Register Page
+#### Search Bar Functionalities
+- `searchExistingProductTest(Highest)*`
+- `productSuggestionDisplaysWhenLetterTypedTest(Medium)`
+- `searchWithCategoryAndProductTest(Highest)`
+- `allTypesDisplayedWhenAllCategorySelectedTest(High)`
+- `selectedCategoryFromSearchDisplaysRespectiveItemsTest(Highest)`
 
-	-testRegisterFormAccessTest(Highest)*
-	-testRegisterAccountWithMandatoryFields(Highest)*
-	-testRegisterAccountWithAllFields(Highest)*
-	-testErrorMessagesForFields(Highest)*
-	-testRegisterUserWithExistingEmail(High)
-	-testRegisterUserWithAlphaNumericPhoneNumber(Medium)
-	-testRegisterUserWithoutClickingOnAgreePrivacyPolicyButton(Highest)
+#### HomePage Buttons Visibilities & Functionalities (Manually to be tested)
+- `Shop By Category button(Medium)`
+- `Home button(Medium)`
+- `Special button(Medium)`
+- `Blog button(Medium)`
+- `Mega Menu button(High)`
+- `AddOns button(High)`
+- `My Account button(High)`
+    - `Login button(Highest)(Automated)`
+        - `loginFormDisplayedWhenLoginButtonClicked(Highest)`
+    - `Register button(Highest)(Automated)`
+        - `registerFormDisplayedWhenRegisterButtonClicked(Highest)`
+- `Compare(Medium)`
+- `Wishlist(Medium)`
+    - `Wishlist number increases when product added(Medium)`
+    - `Wishlist number decreases when product removed(Medium)`
+- `Cart(Medium)`
+    - `Cart number increases when product added(Medium)`
+    - `Cart number decreases when product removed(Medium)`
 
-Login Page
+### Register Page
 
-	-testLoginFormAccess(Highest)*
-	-testLoginWithValidCredentials(Highest)*
-	-testLoginWithInvalidCredentials(Highest)*
-		-loginWithIncorrectPasswordTest(Highest)
-		-loginWithInvalidUsernameAndValidPasswordTest(Highest)
-		-loginWithInvalidUsernameAndPasswordTest(Highest)
-	-forgotPasswordLinkTest(Medium)
-	-testLoginWithEmptyFieldsTest(High)
-	-loginWithChangedPasswordTest(High)
+- `registerFormAccessTest(Highest)*`
+- `registerAccountWithMandatoryFieldsTest(Highest)*`
+- `registerAccountWithAllFieldsWithNewsletterNoTest(Highest)`
+- `errorMessagesForFieldsTest(Highest)*`
+- `registerUserWithExistingEmailTest(Highest)*`
+- `registerUserWithAlphaNumericPhoneNumberTest(Medium)`
+- `registerUserWithoutClickingOnAgreePrivacyPolicyButtonTest(Highest)`
 
-Products Page
+### Login Page
 
-	-productsHavePriceAndNameTest(Highest)*(tested in search)
-	-sortByNameA-ZFunctionalityTest(Medium)
-	-sortByPriceLow-HighFunctionalityTest(High)
-	-addToCartButtonAddsProductToCartTest(Highest)*
-	-purchaseProductWithoutAddingToCartTest(Highest)
-	-wishListButtonAddsProductToWishListTest(High)
-	-quickViewButtonShowsMoreDetailsTest(High)
-	-compareTwoProductsComparesSelectedProductsCorrectlyTest(Highest)*
-	-showNextPhotosOfProductTest(Highest)*
-	-availabilityStatusIsDisplayedTest(Highest)
-	-defaultQuantityOfProductTest(Highest)
+- `loginFormAccessTest(Highest)*`
+- `loginWithValidCredentialsTest(Highest)*`
+- `loginWithInvalidCredentialsTest(Highest)*`
+    - `loginWithIncorrectPasswordTest(Highest)`
+    - `loginWithInvalidUsernameAndValidPasswordTest(Highest)`
+    - `loginWithInvalidUsernameAndPasswordTest(Highest)`
+- `forgotPasswordLinkTest(Medium)`
+- `loginWithEmptyFieldsTest(High)`
+- `loginWithChangedPasswordTest(High)`
 
+### Products Page
 
-ShoppingCart Page
+- `productsHavePriceAndNameTest(Highest)(asserted in homepage search test)`
+- `sortByNameA-ZFunctionalityTest(Medium)`
+- `sortByPriceLow-HighFunctionalityTest(High)`
+- `addToCartButtonAddsProductToCartTest(Highest)*`
+- `purchaseProductWithoutAddingToCartTest(Highest)`
+- `wishListButtonAddsProductToWishListTest(Highest)*`
+- `quickViewButtonShowsMoreDetailsTest(High)`
+- `compareTwoProductsComparesSelectedProductsCorrectlyTest(Highest)*`
+- `showNextPhotosOfProductTest(High)`
+- `availabilityStatusIsDisplayedTest(Highest)`
+- `defaultQuantityOfProductTest(Highest)`
 
-	-addItemToTheShoppingCartTest(Highest)*
-	-removeItemFromShoppingCardTest(Highest)*
-	-updateShoppingCartProductQuantityTest(Highest)*
-		-updateShoppingCartWith0ProductsTest(High)
-		-updateShoppingCartWith9999ProductsTest(High)
-	-imageNameModelQuantityUnitPriceTotalTest(Highest)*
-	-homePageNavigationAfterClickContinueShoppingButtonTest(Medium)
-	-confirmVatTaxForEuCountryTest(Highest)
-	-flatShippingRateRecalculatedBasedOnSize(Highest)
-	-termsAndConditionsCheckButtonTest(Highest)
+### ShoppingCart Page
 
-CheckOut Page
+- `addItemToTheShoppingCartTest(Highest)*`
+- `removeItemFromShoppingCardTest(Highest)*`
+- `userCanAccessCheckOutPageFromShoppingCartTest(Highest)*`
+- `updateShoppingCartProductQuantityTest(Medium)`
+    - `updateShoppingCartWith0ProductsTest(Medium)`
+    - `updateShoppingCartWith9999ProductsTest(Medium)`
+- `imageNameModelQuantityUnitPriceTotalTest(Highest)`
+- `homePageNavigationAfterClickContinueShoppingButtonTest(Medium)`
+- `confirmVatTaxForEuCountryTest(Highest)`
+- `flatShippingRateRecalculatedBasedOnSizeTest(Highest)`
+- `termsAndConditionsCheckButtonTest(Highest)`
 
-	-phoneNumberMatchesUsersNumberTest(Highest)
-	-bilingAddressDropDownAllowsSelectDifferentAddressTest(Highest)
-	-billingAddressToEqualUserAddressWhenBoxCheckedTest(Highest)
-	-newAddressCheckBoxProvidesNewAddressFields(High)
-	-checkOutWithValidAddressDetailsAndFieldsTest(Highest)*
+### CheckOut Page
 
-Confirm Order Page
+- `phoneNumberMatchesUsersNumberTest(Highest)`
+- `billingAddressDropDownAllowsSelectDifferentAddressTest(Highest)`
+- `billingAddressToEqualUserAddressWhenBoxCheckedTest(Highest)`
+- `newAddressCheckBoxProvidesNewAddressFieldsTest(High)`
+- `checkOutWithValidAddressDetailsAndFieldsTest(Highest)*`
 
-	-productNameModelQuantityPriceTotalTest(Highest)
-	-shippingAddressMatchUserAddressTest(Highest)
-	-shippingMethodTest(Highest)
-	-editButtonNavigatesToPreviousPageTest(Highest)
-	-successMessageAfterConfirmOrderTest(Highest)*
+### Confirm Order Page
 
-
-
-
+- `productNameModelQuantityPriceTotalTest(Highest)`
+- `shippingAddressMatchUserAddressTest(Highest)`
+- `shippingMethodTest(Highest)`
+- `editButtonNavigatesToPreviousPageTest(Highest)`
+- `successMessageAfterConfirmOrderTest(Highest)*`

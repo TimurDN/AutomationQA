@@ -3,6 +3,7 @@ package uitests.ecommercelambda.tests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
+
 import static com.telerikacademy.testframework.Constants.*;
 
 public class RegisterPageTests extends BaseTestLambda {
