@@ -42,6 +42,12 @@ public class HomePageLambda extends BasePageLambda {
         actions.clickElement(String.format("(//h4[@class='title']/a[text()='%s'])[1]", name));
     }
 
+    public void navigateToFirstTopProduct(String name) {
+        actions.scrollDown(500); //scroll to element scrolls too much check why
+        actions.waitForElementClickable(String.format("(//h4[@class='title']/a[@class='text-ellipsis-2' and text()='%s'])[1]", name));
+        actions.clickElement(String.format("(//h4[@class='title']/a[@class='text-ellipsis-2' and text()='%s'])[1]", name));
+    }
+
     public void assertHomePageNavigated() {
         driver.get("https://ecommerce-playground.lambdatest.io/");
         Assertions.assertTrue(driver.getTitle().contains("Your Store"));

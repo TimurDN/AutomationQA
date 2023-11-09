@@ -124,7 +124,6 @@ public class UserActions {
     }
 
     public void scrollToElement(String key) {
-
         WebElement Element = driver.findElement(By.xpath(key));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         // Scrolling down the page till the element is found

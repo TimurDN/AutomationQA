@@ -19,6 +19,11 @@ public class ProductsPageLambda extends BasePageLambda {
         actions.clickElement("//a[@class='btn btn-secondary btn-block']");
     }
 
+    public void clickOnCartButton() {
+        actions.waitForElementClickable("(//div[@class='cart-icon'])[1]");
+        actions.clickElement("(//div[@class='cart-icon'])[1]");
+    }
+
     public void addToCartFromProductPage() {
         actions.waitForElementClickable("(//button[@title='Add to Cart'])[2]");
         actions.clickElement("(//button[@title='Add to Cart'])[2]");
@@ -31,6 +36,17 @@ public class ProductsPageLambda extends BasePageLambda {
         actions.keyboardActionEnter("//select[@id='input-option230-216836']");
     }
 
+    public void addProductToWishList(){
+        actions.waitForElementVisible
+                ("(//img[@class='lazy-load' and @alt='Palm Treo Pro' and @title='Palm Treo Pro'])[1]");
+        actions.mouseHoverBy
+                ("(//img[@class='lazy-load' and @alt='Palm Treo Pro' and @title='Palm Treo Pro'])[1]");
+        actions.waitForElementClickable
+                ("(//button[contains(@class, 'btn-wishlist') and contains(@title, 'Add to Wish List')])[1]");
+        actions.clickElement
+                ("(//button[contains(@class, 'btn-wishlist') and contains(@title, 'Add to Wish List')])[1]");
+    }
+
     public boolean assertProductAddedToCompareListMessage(String name) {
         actions.waitForElementVisible("//*[contains(text(),'Success:')]");
         return driver.findElement(By.xpath("//*[contains(text(),'Success:')]"))
@@ -38,6 +54,12 @@ public class ProductsPageLambda extends BasePageLambda {
     }
 
     public boolean assertProductAddedToCartListMessage(String name) {
+        actions.waitForElementVisible("//*[contains(text(),'Success:')]");
+        return driver.findElement(By.xpath("//*[contains(text(),'Success:')]"))
+                .getText().contains(String.format("You have added\n%s", name));
+    }
+
+    public boolean assertProductAddedToWishListMessage(String name) {
         actions.waitForElementVisible("//*[contains(text(),'Success:')]");
         return driver.findElement(By.xpath("//*[contains(text(),'Success:')]"))
                 .getText().contains(String.format("You have added\n%s", name));

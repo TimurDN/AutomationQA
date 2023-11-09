@@ -7,6 +7,11 @@ import uitests.ecommercelambda.base.BaseTestLambda;
 
 public class ProductsPageTests extends BaseTestLambda {
 
+    String firstName = "";
+    String lastName = "";
+    String password = "";
+    String email = "";
+
     @BeforeEach
     public void beforeTestSetup() {
         homePageLambda.navigateToPage();
@@ -14,8 +19,6 @@ public class ProductsPageTests extends BaseTestLambda {
 
     @Test
     public void compareTwoProductsComparesSelectedProductsCorrectlyTest() {
-        homePageLambda.searchForSpecificProduct("iPhone");
-        homePageLambda.clickOnSearchedProduct("iPhone");
         productsPageLambda.addProductToCompare();
         Assertions.assertTrue(productsPageLambda.assertProductAddedToCompareListMessage("iPhone"));
 
@@ -46,4 +49,22 @@ public class ProductsPageTests extends BaseTestLambda {
         Assertions.assertTrue(productsPageLambda.assertProductAddedToCartListMessage("Canon EOS 5D"));
 
     }
+
+    @Test
+    public void wishListButtonAddsProductToWishListTest() {
+        firstName += registerPageLambda.generateUser();
+        lastName += registerPageLambda.generateUser();
+        password += registerPageLambda.generatePassword();
+        email += registerPageLambda.generateEmail();
+
+        homePageLambda.navigateToRegisterButton();
+        registerPageLambda.registerUser(firstName,lastName,email,password);
+
+        homePageLambda.searchForSpecificProduct("Palm Treo Pro");
+        productsPageLambda.addProductToWishList();
+
+        productsPageLambda.assertProductAddedToWishListMessage("Palm Treo Pro");
+
+    }
+
 }
