@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
 
+import static com.telerikacademy.testframework.Constants.*;
+
 public class LoginPageTests extends BaseTestLambda {
 
     String firstName = "";
@@ -34,7 +36,7 @@ public class LoginPageTests extends BaseTestLambda {
     @Test
     public void loginWithValidCredentials() {
         homePageLambda.navigateToRegisterButton();
-        registerPageLambda.registerUser(firstName, lastName, email, password);
+        registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
         homePageLambda.navigateToLogoutButton();
 
         loginPageLambda.loginUser(email, password);
@@ -45,12 +47,11 @@ public class LoginPageTests extends BaseTestLambda {
     @Test
     public void loginWithValidUsernameAndInvalidPassword() {
         homePageLambda.navigateToRegisterButton();
-        registerPageLambda.registerUser(firstName, lastName, email, password);
+        registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
         homePageLambda.navigateToLogoutButton();
 
-        loginPageLambda.loginUserWithInvalidPassword(email, "010010a");
+        loginPageLambda.loginUserWithInvalidPassword(email, INVALID_PASSWORD);
         loginPageLambda.assertAuthenticationError();
-
 
     }
 

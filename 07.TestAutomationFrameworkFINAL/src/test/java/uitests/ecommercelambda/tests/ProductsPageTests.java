@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
+import static com.telerikacademy.testframework.Constants.*;
 
 public class ProductsPageTests extends BaseTestLambda {
 
@@ -20,33 +21,33 @@ public class ProductsPageTests extends BaseTestLambda {
     @Test
     public void compareTwoProductsComparesSelectedProductsCorrectlyTest() {
         productsPageLambda.addProductToCompare();
-        Assertions.assertTrue(productsPageLambda.assertProductAddedToCompareListMessage("iPhone"));
+        Assertions.assertTrue(productsPageLambda.assertProductAddedToCompareListMessage(PRODUCT_IPHONE));
 
         homePageLambda.navigateToPage();
 
-        homePageLambda.searchForSpecificProduct("HTC Touch HD");
-        homePageLambda.clickOnSearchedProduct("HTC Touch HD");
+        homePageLambda.searchForSpecificProduct(PRODUCT_HTC_TOUCH_HD);
+        homePageLambda.clickOnSearchedProduct(PRODUCT_HTC_TOUCH_HD);
         productsPageLambda.addProductToCompare();
-        Assertions.assertTrue(productsPageLambda.assertProductAddedToCompareListMessage("HTC Touch HD"));
+        Assertions.assertTrue(productsPageLambda.assertProductAddedToCompareListMessage(PRODUCT_HTC_TOUCH_HD));
 
         productsPageLambda.clickOnCompareButton();
         productsPageLambda.assertComparisonPageNavigated();
-        productsPageLambda.assertComparedProductName1("iPhone");
-        productsPageLambda.assertComparedProductName2("HTC Touch HD");
-        productsPageLambda.assertComparedCorrectPriceOfProduct1("$123.20");
-        productsPageLambda.assertComparedCorrectPriceOfProduct2("$146.00");
+        productsPageLambda.assertComparedProductName1(PRODUCT_IPHONE);
+        productsPageLambda.assertComparedProductName2(PRODUCT_HTC_TOUCH_HD);
+        productsPageLambda.assertComparedCorrectPriceOfProduct1(IPHONE_PRICE);
+        productsPageLambda.assertComparedCorrectPriceOfProduct2(HTC_TOUCH_HD_PRICE);
 
     }
 
     @Test
     public void addToCartButtonAddsProductToCartTest() {
-        homePageLambda.searchForSpecificProduct("Canon EOS 5D");
-        homePageLambda.clickOnSearchedProduct("Canon EOS 5D");
+        homePageLambda.searchForSpecificProduct(PRODUCT_CANON_EOS_5_D);
+        homePageLambda.clickOnSearchedProduct(PRODUCT_CANON_EOS_5_D);
 
         productsPageLambda.selectProductSize();
         productsPageLambda.addToCartFromProductPage();
 
-        Assertions.assertTrue(productsPageLambda.assertProductAddedToCartListMessage("Canon EOS 5D"));
+        Assertions.assertTrue(productsPageLambda.assertProductAddedToCartListMessage(PRODUCT_CANON_EOS_5_D));
 
     }
 
@@ -58,12 +59,12 @@ public class ProductsPageTests extends BaseTestLambda {
         email += registerPageLambda.generateEmail();
 
         homePageLambda.navigateToRegisterButton();
-        registerPageLambda.registerUser(firstName,lastName,email,password);
+        registerPageLambda.registerUser(firstName,lastName,email,password,PHONE_NUMBER);
 
-        homePageLambda.searchForSpecificProduct("Palm Treo Pro");
+        homePageLambda.searchForSpecificProduct(PRODUCT_PALM_TREO_PRO);
         productsPageLambda.addProductToWishList();
 
-        productsPageLambda.assertProductAddedToWishListMessage("Palm Treo Pro");
+        productsPageLambda.assertProductAddedToWishListMessage(PRODUCT_PALM_TREO_PRO);
 
     }
 

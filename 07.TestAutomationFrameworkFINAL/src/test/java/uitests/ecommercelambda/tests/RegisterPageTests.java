@@ -3,6 +3,7 @@ package uitests.ecommercelambda.tests;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
+import static com.telerikacademy.testframework.Constants.*;
 
 public class RegisterPageTests extends BaseTestLambda {
 
@@ -18,6 +19,8 @@ public class RegisterPageTests extends BaseTestLambda {
         lastName += registerPageLambda.generateUser();
         password += registerPageLambda.generatePassword();
         email += registerPageLambda.generateEmail();
+        homePageLambda.navigateToPage();
+        homePageLambda.navigateToRegisterButton();
 
     }
 
@@ -32,20 +35,22 @@ public class RegisterPageTests extends BaseTestLambda {
 
     @Test
     public void registerUserWithMandatoryFieldsTest() {
-        homePageLambda.navigateToPage();
-        homePageLambda.navigateToRegisterButton();
-        registerPageLambda.registerUser(firstName, lastName, email, password);
-
+        registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
         registerPageLambda.assertSuccessfulRegistration();
     }
 
     @Test
-    public void registerUserWithAllFieldsTest() {
+    public void registerUserWithExistingEmailTest() {
+        registerPageLambda.registerUser(firstName, lastName, EXISTING_EMAIL, password, PHONE_NUMBER);
+        registerPageLambda.assertExistingEmailErrorMessage();
+
 
     }
 
     @Test
     public void errorMessagesWhenEmptyFieldsSubmittedTest() {
+        registerPageLambda.registerUser("",
+                "", "", "", "");
 
     }
 }

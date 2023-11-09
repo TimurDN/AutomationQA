@@ -10,7 +10,8 @@ public class RegisterPageLambda extends BasePage {
         super(driver, "lambda.register.page");
     }
 
-    public void registerUser(String generateFirstName,String generateLastName,String generateEmail, String generatePassword) {
+    public void registerUser(String generateFirstName,String generateLastName,
+                             String generateEmail, String generatePassword, String phoneNumber) {
         navigateToPage();
 
         actions.waitForElementClickable("register.page.firstNameField");
@@ -23,7 +24,7 @@ public class RegisterPageLambda extends BasePage {
         actions.typeValueInField(generateEmail, "register.page.emailField");
 
         actions.waitForElementClickable("register.page.phoneField");
-        actions.typeValueInField("151517815454", "register.page.phoneField");
+        actions.typeValueInField(phoneNumber, "register.page.phoneField");
 
         actions.waitForElementClickable("register.page.passwordField");
         actions.typeValueInField(generatePassword, "register.page.passwordField");
@@ -64,6 +65,14 @@ public class RegisterPageLambda extends BasePage {
     public void assertRegisterFormDisplayed(){
         actions.waitForElementVisible("//h1[text()='Register Account']");
         actions.assertElementPresent("//h1[text()='Register Account']");
+
+    }
+    public void assertExistingEmailErrorMessage(){
+        actions.waitForElementVisible
+                ("//div[@class='alert alert-danger alert-dismissible' " +
+                        "and contains(text(),' Warning: E-Mail Address is already registered!')] ");
+        actions.assertElementVisible("//div[@class='alert alert-danger alert-dismissible' " +
+                "and contains(text(),' Warning: E-Mail Address is already registered!')] ");
 
     }
 }
