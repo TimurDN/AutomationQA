@@ -18,8 +18,8 @@ public class ShoppingCartPageLambda extends BasePageLambda {
     }
 
     public void clickCheckOutButtonInShoppingCart() {
-        actions.waitForElementVisible("//a[@class='icon-right both btn btn-secondary btn-lg btn-block']");
-        actions.clickElement("//a[@class='icon-right both btn btn-secondary btn-lg btn-block']");
+        actions.waitForElementVisible("//a[@class='btn btn-secondary btn-block']");
+        actions.clickElement("//a[@class='btn btn-secondary btn-block']");
     }
 
     public void removeAddedItemFromCart() {
