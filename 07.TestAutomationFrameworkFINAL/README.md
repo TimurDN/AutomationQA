@@ -7,6 +7,7 @@
 
 - **Highest Priority Test Cases:** 45
   - Creating Strategy & Automated Tests*: 17 (completed in 5 days)
+  - (See surefire report in target/site)
   - Pending: 28
 
 - **High Priority Test Cases:** 13

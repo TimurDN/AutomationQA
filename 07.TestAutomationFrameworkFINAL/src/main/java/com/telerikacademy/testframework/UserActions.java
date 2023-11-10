@@ -105,17 +105,17 @@ public class UserActions {
         dragAndDrop.perform();
     }
 
-//    public void dragAndDrop2(String cardName, String listName) {
-//        //Actions class method to drag and drop
-//        Actions builder = new Actions(driver);
-//
-//        WebElement from = driver.findElement(By.xpath("//span[text()='" + cardName + "']"));
-//
-//        WebElement to = driver.findElement(By.xpath("//textarea[@aria-label='" + listName + "']"));
-//        //Perform drag and drop
-//        builder.dragAndDrop(from, to).build().perform();
-//
-//    }
+    public void dragAndDrop2(String cardName, String listName) {
+        //Actions class method to drag and drop
+        Actions builder = new Actions(driver);
+
+        WebElement from = driver.findElement(By.xpath("//span[text()='" + cardName + "']"));
+
+        WebElement to = driver.findElement(By.xpath("//textarea[@aria-label='" + listName + "']"));
+        //Perform drag and drop
+        builder.dragAndDrop(from, to).build().perform();
+
+    }
 
     public void refreshPage() throws InterruptedException {
         Thread.sleep(3000);
@@ -249,18 +249,6 @@ public class UserActions {
 
         return text;
     }
-
-//    public void assertElementPresentWithArg(String locator,  Object... arguments) {
-//        String formattedLocator = getLocatorValueByKey(locator, arguments);
-//        Assertions.assertNotNull(format("Element with %s doesn't present.", formattedLocator),
-//                driver.findElement(By.xpath(getUIMappingByKey(formattedLocator))));
-//    }
-
-//    public void assertElementPresent(String locator ) {
-//
-//        Assert.assertNotNull(format("Element with %s doesn't present.", locator),
-//                driver.findElement(By.xpath(getUIMappingByKey(locator))));
-//    }
 
     public void assertElementAttribute(String locator, String attributeName, String attributeValue) {
         // TODO: Implement the method
