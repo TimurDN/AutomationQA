@@ -37,7 +37,7 @@ public class LoginPageTests extends BaseTestLambda {
     public void loginWithValidCredentials() {
         homePageLambda.navigateToRegisterButton();
         registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
-        homePageLambda.navigateToLogoutButton();
+        homePageLambda.clickOnLogoutButton();
 
         loginPageLambda.loginUser(email, password);
         loginPageLambda.assertAuthenticatedUser();
@@ -48,7 +48,7 @@ public class LoginPageTests extends BaseTestLambda {
     public void loginWithValidUsernameAndInvalidPassword() {
         homePageLambda.navigateToRegisterButton();
         registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
-        homePageLambda.navigateToLogoutButton();
+        homePageLambda.clickOnLogoutButton();
 
         loginPageLambda.loginUserWithInvalidPassword(email, INVALID_PASSWORD);
         loginPageLambda.assertAuthenticationError();

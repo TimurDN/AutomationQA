@@ -75,4 +75,27 @@ public class RegisterPageLambda extends BasePage {
                 "and contains(text(),' Warning: E-Mail Address is already registered!')] ");
 
     }
+
+    public void assertUserIsNotNavigatedToNextPage(){
+        actions.waitForElementVisible("//h1[text()='Register Account']");
+        actions.assertElementVisible("//h1[text()='Register Account']");
+    }
+
+    public void assertRegisterFormErrorMessagesForEmptyFields(){
+        actions.waitForElementVisible("//div[text()='First Name must be between 1 and 32 characters!']");
+        actions.assertElementVisible("//div[text()='First Name must be between 1 and 32 characters!']");
+
+        actions.waitForElementVisible("//div[text()='Last Name must be between 1 and 32 characters!']");
+        actions.assertElementVisible("//div[text()='Last Name must be between 1 and 32 characters!']");
+
+        actions.waitForElementVisible("//div[text()='E-Mail Address does not appear to be valid!']");
+        actions.assertElementVisible("//div[text()='E-Mail Address does not appear to be valid!']");
+
+        actions.waitForElementVisible("//div[text()='Telephone must be between 3 and 32 characters!']");
+        actions.assertElementVisible("//div[text()='Telephone must be between 3 and 32 characters!']");
+
+        actions.waitForElementVisible("//div[text()='Password must be between 4 and 20 characters!']");
+        actions.assertElementVisible("//div[text()='Password must be between 4 and 20 characters!']");
+
+    }
 }

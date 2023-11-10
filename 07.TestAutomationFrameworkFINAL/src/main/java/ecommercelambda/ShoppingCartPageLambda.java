@@ -22,6 +22,11 @@ public class ShoppingCartPageLambda extends BasePageLambda {
         actions.clickElement("//a[@class='btn btn-secondary btn-block']");
     }
 
+    public void clickCheckOutButtonInShoppingCart2() {
+        actions.waitForElementVisible("//body/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/a[1]");
+        actions.clickElement("//body/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/a[1]");
+    }
+
     public void removeAddedItemFromCart() {
         actions.waitForElementClickable("//tbody/tr[1]/td[4]/div[1]/div[1]/button[2]");
         actions.clickElement("//tbody/tr[1]/td[4]/div[1]/div[1]/button[2]");

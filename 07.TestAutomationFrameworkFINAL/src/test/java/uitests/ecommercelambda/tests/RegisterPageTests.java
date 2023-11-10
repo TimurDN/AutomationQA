@@ -52,6 +52,8 @@ public class RegisterPageTests extends BaseTestLambda {
     public void errorMessagesWhenEmptyFieldsSubmittedTest() {
         registerPageLambda.registerUser("",
                 "", "", "", "");
+        registerPageLambda.assertUserIsNotNavigatedToNextPage();
+        registerPageLambda.assertRegisterFormErrorMessagesForEmptyFields();
 
     }
 }

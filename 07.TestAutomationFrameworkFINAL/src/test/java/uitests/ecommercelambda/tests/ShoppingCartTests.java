@@ -28,7 +28,6 @@ public class ShoppingCartTests extends BaseTestLambda {
 
     @Test
     public void removeAddedItemFromTheShoppingCartTest() {
-        ;
         productsPageLambda.assertProductAddedToCartListMessage(PRODUCT_IMAC);
         shoppingCartPageLambda.assertShoppingCartBadgeItemIs1("1");
 
@@ -51,7 +50,8 @@ public class ShoppingCartTests extends BaseTestLambda {
         productsPageLambda.clickOnCartButton();
         shoppingCartPageLambda.assertShoppingCardPopUpItemIs1("x1");
 
-        shoppingCartPageLambda.clickCheckOutButtonInShoppingCart();
+        shoppingCartPageLambda.clickCheckOutButtonInShoppingCart2();
         shoppingCartPageLambda.assertNavigateCheckOutPageFromShoppingCart();
+
     }
 }

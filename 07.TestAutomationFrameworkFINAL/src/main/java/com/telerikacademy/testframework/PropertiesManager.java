@@ -10,7 +10,6 @@ import static com.telerikacademy.testframework.Utils.LOGGER;
 public class PropertiesManager {
 
     public enum PropertiesManagerEnum {
-
         INSTANCE;
         private static final String UI_MAP = "src/test/resources/mappings/ui_map.properties";
         private static final String CONFIG_PROPERTIES = "src/test/resources/config.properties";

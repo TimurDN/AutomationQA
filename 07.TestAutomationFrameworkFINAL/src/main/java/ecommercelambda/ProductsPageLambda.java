@@ -30,10 +30,10 @@ public class ProductsPageLambda extends BasePageLambda {
     }
 
     public void selectProductSize() {
-        actions.waitForElementClickable("//select[@id='input-option230-216836']");
-        actions.clickElement("//select[@id='input-option230-216836']");
-        actions.keyboardActionArrowDown("//select[@id='input-option230-216836']");
-        actions.keyboardActionEnter("//select[@id='input-option230-216836']");
+        actions.waitForElementClickable("(//select[@class='custom-select'])[1]");
+        actions.clickElement("(//select[@class='custom-select'])[1]");
+        actions.keyboardActionArrowDown("(//select[@class='custom-select'])[1]");
+        actions.keyboardActionEnter("(//select[@class='custom-select'])[1]");
     }
 
     public void addProductToWishList(){

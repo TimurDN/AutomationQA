@@ -2,7 +2,6 @@ package ecommercelambda;
 
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class HomePageLambda extends BasePageLambda {
     public HomePageLambda(WebDriver driver) {
@@ -23,7 +22,7 @@ public class HomePageLambda extends BasePageLambda {
 
     }
 
-    public void navigateToLogoutButton() {
+    public void clickOnLogoutButton() {
         actions.mouseHoverBy("(//span[@class='title' and contains(text(), 'My account')])[2]");
         actions.waitForElementVisible("//a[contains(@href, 'logout')]");
         actions.clickElement("//a[contains(@href, 'logout')]");
@@ -38,8 +37,8 @@ public class HomePageLambda extends BasePageLambda {
     }
 
     public void clickOnSearchedProduct(String name) {
-        actions.waitForElementClickable(String.format("(//h4[@class='title']/a[text()='%s'])[1]", name));
-        actions.clickElement(String.format("(//h4[@class='title']/a[text()='%s'])[1]", name));
+        actions.waitForElementClickable(String.format("(//h4[@class='title']/a[text()='%s'])[2]", name));
+        actions.clickElement(String.format("(//h4[@class='title']/a[text()='%s'])[2]", name));
     }
 
     public void navigateToFirstTopProduct(String name) {

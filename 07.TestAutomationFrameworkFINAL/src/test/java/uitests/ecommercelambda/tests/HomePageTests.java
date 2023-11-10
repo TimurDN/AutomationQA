@@ -8,7 +8,6 @@ import static com.telerikacademy.testframework.Constants.*;
 
 public class HomePageTests extends BaseTestLambda {
 
-
     @BeforeEach
     public void setUpBefore() {
         homePageLambda.navigateToPage();

@@ -6,7 +6,7 @@
 ## Priority Summary
 
 - **Highest Priority Test Cases:** 45
-  - Automated: 17 (completed in 5 days)
+  - Creating Strategy & Automated Tests*: 17 (completed in 5 days)
   - Pending: 28
 
 - **High Priority Test Cases:** 13

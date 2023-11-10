@@ -4,10 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
+
 import static com.telerikacademy.testframework.Constants.*;
 
 public class ProductsPageTests extends BaseTestLambda {
-
     String firstName = "";
     String lastName = "";
     String password = "";
@@ -20,6 +20,9 @@ public class ProductsPageTests extends BaseTestLambda {
 
     @Test
     public void compareTwoProductsComparesSelectedProductsCorrectlyTest() {
+        homePageLambda.searchForSpecificProduct(PRODUCT_IPHONE);
+        homePageLambda.clickOnSearchedProduct(PRODUCT_IPHONE);
+
         productsPageLambda.addProductToCompare();
         Assertions.assertTrue(productsPageLambda.assertProductAddedToCompareListMessage(PRODUCT_IPHONE));
 
@@ -59,7 +62,7 @@ public class ProductsPageTests extends BaseTestLambda {
         email += registerPageLambda.generateEmail();
 
         homePageLambda.navigateToRegisterButton();
-        registerPageLambda.registerUser(firstName,lastName,email,password,PHONE_NUMBER);
+        registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
 
         homePageLambda.searchForSpecificProduct(PRODUCT_PALM_TREO_PRO);
         productsPageLambda.addProductToWishList();

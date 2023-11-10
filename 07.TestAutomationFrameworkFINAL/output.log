@@ -1,23 +1,280 @@
-2023-11-10 00:09:24,045 INFO  [main] Initializing WebDriver
-2023-11-10 00:09:32,237 INFO  [main] Initializing WebDriver
-2023-11-10 00:09:33,143 INFO  [main] Initializing WebDriver
-2023-11-10 00:09:33,143 INFO  [main] Initializing WebDriver
-2023-11-10 00:09:33,144 INFO  [main] Initializing WebDriver
-2023-11-10 00:09:33,144 INFO  [main] Initializing WebDriver
-2023-11-10 00:09:33,145 INFO  [main] Initializing WebDriver
-2023-11-10 00:09:33,145 INFO  [main] Initializing WebDriver
-2023-11-10 00:09:37,905 INFO  [main] Clicking on element //a[contains(@href, 'register')]
-2023-11-10 00:09:41,396 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
-2023-11-10 00:09:41,577 INFO  [main] Clicking on element register.page.continueButton
-2023-11-10 00:09:43,289 INFO  [main] Clicking on element //a[contains(@href, 'logout')]
-2023-11-10 00:09:44,748 INFO  [main] Clicking on element //a[contains(@href, 'login')]
-2023-11-10 00:09:46,608 INFO  [main] Clicking on element login.submit.buttonField
-2023-11-10 00:09:48,323 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-10 00:09:48,428 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-10 00:09:48,626 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
-2023-11-10 00:09:50,705 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='Canon EOS 5D'])[1]
-2023-11-10 00:09:53,173 INFO  [main] Clicking on element //select[@id='input-option230-216836']
-2023-11-10 00:09:53,337 INFO  [main] Clicking on element //select[@id='input-option230-216836']
-2023-11-10 00:09:53,495 INFO  [main] Clicking on element //select[@id='input-option230-216836']
-2023-11-10 00:09:54,231 INFO  [main] Clicking on element (//button[@title='Add to Cart'])[2]
-2023-11-10 00:09:54,937 INFO  [main] Clicking on element //a[@class='btn btn-secondary btn-block']
+2023-11-10 22:11:15,237 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:19,497 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:22,380 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:22,380 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:22,380 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:22,382 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:22,382 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:22,382 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:22,384 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:24,483 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:11:27,621 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-10 22:11:27,739 INFO  [main] Clicking on element register.page.continueButton
+2023-11-10 22:11:29,312 INFO  [main] Clicking on element //a[contains(@href, 'logout')]
+2023-11-10 22:11:30,575 INFO  [main] Clicking on element //a[contains(@href, 'login')]
+2023-11-10 22:11:32,049 INFO  [main] Clicking on element login.submit.buttonField
+2023-11-10 22:11:33,476 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:11:33,542 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:11:33,610 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:11:35,391 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='Canon EOS 5D'])[2]
+2023-11-10 22:11:37,618 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:11:37,708 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:11:37,790 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:11:38,478 INFO  [main] Clicking on element (//button[@title='Add to Cart'])[2]
+2023-11-10 22:11:39,119 INFO  [main] Clicking on element //a[@class='btn btn-secondary btn-block']
+2023-11-10 22:11:40,836 INFO  [main] Clicking on element //input[@name='firstname']
+2023-11-10 22:11:41,027 INFO  [main] Clicking on element //input[@name='lastname']
+2023-11-10 22:11:41,214 INFO  [main] Clicking on element //input[@name='company']
+2023-11-10 22:11:41,379 INFO  [main] Clicking on element //input[@name='address_1']
+2023-11-10 22:11:41,547 INFO  [main] Clicking on element //input[@name='city']
+2023-11-10 22:11:41,691 INFO  [main] Clicking on element //input[@name='postcode']
+2023-11-10 22:11:41,857 INFO  [main] Clicking on element //select[@id='input-payment-country']
+2023-11-10 22:11:41,979 INFO  [main] Clicking on element //select[@id='input-payment-country']
+2023-11-10 22:11:42,237 INFO  [main] Clicking on element //select[@id='input-payment-zone']
+2023-11-10 22:11:42,360 INFO  [main] Clicking on element //select[@id='input-payment-zone']
+2023-11-10 22:11:42,496 INFO  [main] Clicking on element //select[@id='input-payment-zone']
+2023-11-10 22:11:42,650 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[5]/label[1]
+2023-11-10 22:11:43,311 INFO  [main] Clicking on element //button[@id='button-save']
+2023-11-10 22:11:46,490 INFO  [main] Clicking on element //a[contains(@href, 'logout')]
+2023-11-10 22:11:47,162 INFO  [main] Quitting WebDriver
+2023-11-10 22:11:47,590 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:52,563 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:52,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:52,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:52,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:52,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:52,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:52,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:11:53,873 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:11:56,521 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-10 22:11:56,631 INFO  [main] Clicking on element register.page.continueButton
+2023-11-10 22:11:58,064 INFO  [main] Clicking on element //a[contains(@href, 'logout')]
+2023-11-10 22:11:59,352 INFO  [main] Clicking on element //a[contains(@href, 'login')]
+2023-11-10 22:12:00,835 INFO  [main] Clicking on element login.submit.buttonField
+2023-11-10 22:12:02,687 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:12:02,760 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:12:02,841 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:12:04,508 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='Canon EOS 5D'])[2]
+2023-11-10 22:12:06,561 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:12:06,642 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:12:06,739 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:12:07,423 INFO  [main] Clicking on element (//button[@title='Add to Cart'])[2]
+2023-11-10 22:12:08,045 INFO  [main] Clicking on element //a[@class='btn btn-secondary btn-block']
+2023-11-10 22:12:09,680 INFO  [main] Clicking on element //input[@name='firstname']
+2023-11-10 22:12:09,857 INFO  [main] Clicking on element //input[@name='lastname']
+2023-11-10 22:12:10,019 INFO  [main] Clicking on element //input[@name='company']
+2023-11-10 22:12:10,175 INFO  [main] Clicking on element //input[@name='address_1']
+2023-11-10 22:12:10,320 INFO  [main] Clicking on element //input[@name='city']
+2023-11-10 22:12:10,452 INFO  [main] Clicking on element //input[@name='postcode']
+2023-11-10 22:12:10,594 INFO  [main] Clicking on element //select[@id='input-payment-country']
+2023-11-10 22:12:10,715 INFO  [main] Clicking on element //select[@id='input-payment-country']
+2023-11-10 22:12:10,955 INFO  [main] Clicking on element //select[@id='input-payment-zone']
+2023-11-10 22:12:11,075 INFO  [main] Clicking on element //select[@id='input-payment-zone']
+2023-11-10 22:12:11,204 INFO  [main] Clicking on element //select[@id='input-payment-zone']
+2023-11-10 22:12:11,353 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[2]/div[1]/div[5]/label[1]
+2023-11-10 22:12:12,027 INFO  [main] Clicking on element //button[@id='button-save']
+2023-11-10 22:12:13,837 INFO  [main] Clicking on element //button[@id='button-confirm']
+2023-11-10 22:12:16,290 INFO  [main] Clicking on element //a[contains(@href, 'logout')]
+2023-11-10 22:12:16,959 INFO  [main] Quitting WebDriver
+2023-11-10 22:12:17,335 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:22,935 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:22,935 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:22,936 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:22,936 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:22,936 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:22,936 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:22,936 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:24,244 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:12:24,321 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:12:24,409 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:12:26,339 INFO  [main] Quitting WebDriver
+2023-11-10 22:12:26,709 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:31,604 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:31,605 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:31,605 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:31,606 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:31,606 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:31,606 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:31,606 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:33,898 INFO  [main] Quitting WebDriver
+2023-11-10 22:12:34,240 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:39,379 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:39,379 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:39,379 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:39,379 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:39,379 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:39,379 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:39,379 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:40,901 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:12:43,604 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-10 22:12:43,715 INFO  [main] Clicking on element register.page.continueButton
+2023-11-10 22:12:45,318 INFO  [main] Clicking on element //a[contains(@href, 'logout')]
+2023-11-10 22:12:47,403 INFO  [main] Clicking on element login.submit.buttonField
+2023-11-10 22:12:47,914 INFO  [main] Quitting WebDriver
+2023-11-10 22:12:48,241 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:53,303 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:53,303 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:53,303 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:53,303 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:53,303 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:53,303 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:53,303 INFO  [main] Initializing WebDriver
+2023-11-10 22:12:54,732 INFO  [main] Clicking on element //a[contains(@href, 'login')]
+2023-11-10 22:12:55,889 INFO  [main] Quitting WebDriver
+2023-11-10 22:12:56,230 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:01,780 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:01,782 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:01,782 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:01,782 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:01,782 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:01,782 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:01,782 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:03,305 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:13:06,315 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-10 22:13:06,430 INFO  [main] Clicking on element register.page.continueButton
+2023-11-10 22:13:07,992 INFO  [main] Clicking on element //a[contains(@href, 'logout')]
+2023-11-10 22:13:10,022 INFO  [main] Clicking on element login.submit.buttonField
+2023-11-10 22:13:12,168 INFO  [main] Quitting WebDriver
+2023-11-10 22:13:12,603 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:18,789 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:18,789 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:18,789 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:18,790 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:18,790 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:18,790 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:18,790 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:20,134 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:20,235 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:20,312 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:22,145 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='iPhone'])[2]
+2023-11-10 22:13:24,354 INFO  [main] Clicking on element //*[@title='Add to Cart']/../../../../div/button[@title='Compare this Product']
+2023-11-10 22:13:26,167 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:26,243 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:26,321 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:27,478 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='HTC Touch HD'])[2]
+2023-11-10 22:13:28,457 INFO  [main] Clicking on element //*[@title='Add to Cart']/../../../../div/button[@title='Compare this Product']
+2023-11-10 22:13:29,134 INFO  [main] Clicking on element //a[@class='btn btn-secondary btn-block']
+2023-11-10 22:13:30,349 INFO  [main] Quitting WebDriver
+2023-11-10 22:13:30,685 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:36,650 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:36,650 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:36,650 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:36,650 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:36,650 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:36,650 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:36,650 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:38,150 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:13:40,734 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-10 22:13:40,843 INFO  [main] Clicking on element register.page.continueButton
+2023-11-10 22:13:42,471 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:42,533 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:42,598 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:44,579 INFO  [main] Clicking on element (//button[contains(@class, 'btn-wishlist') and contains(@title, 'Add to Wish List')])[1]
+2023-11-10 22:13:45,233 INFO  [main] Quitting WebDriver
+2023-11-10 22:13:45,602 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:51,266 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:51,266 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:51,266 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:51,267 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:51,267 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:51,267 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:51,267 INFO  [main] Initializing WebDriver
+2023-11-10 22:13:52,700 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:52,786 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:52,875 INFO  [main] Clicking on element (//input[@type='text'][@placeholder='Search For Products'])[1]
+2023-11-10 22:13:54,366 INFO  [main] Clicking on element (//h4[@class='title']/a[text()='Canon EOS 5D'])[2]
+2023-11-10 22:13:56,289 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:13:56,380 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:13:56,458 INFO  [main] Clicking on element (//select[@class='custom-select'])[1]
+2023-11-10 22:13:57,150 INFO  [main] Clicking on element (//button[@title='Add to Cart'])[2]
+2023-11-10 22:13:57,782 INFO  [main] Quitting WebDriver
+2023-11-10 22:13:58,166 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:03,610 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:03,610 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:03,610 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:03,610 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:03,610 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:03,610 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:03,610 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:05,076 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:14:07,330 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-10 22:14:07,423 INFO  [main] Clicking on element register.page.continueButton
+2023-11-10 22:14:08,312 INFO  [main] Quitting WebDriver
+2023-11-10 22:14:08,660 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:17,092 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:17,092 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:17,092 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:17,093 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:17,093 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:17,093 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:17,093 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:18,510 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:14:21,306 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-10 22:14:21,436 INFO  [main] Clicking on element register.page.continueButton
+2023-11-10 22:14:22,676 INFO  [main] Clicking on element register.page.successful.register
+2023-11-10 22:14:22,728 INFO  [main] Quitting WebDriver
+2023-11-10 22:14:23,077 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:28,563 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:28,563 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:28,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:28,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:28,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:28,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:28,564 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:30,029 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:14:32,504 INFO  [main] Clicking on element //body/div[1]/div[5]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/div[1]/label[1]
+2023-11-10 22:14:32,611 INFO  [main] Clicking on element register.page.continueButton
+2023-11-10 22:14:33,255 INFO  [main] Quitting WebDriver
+2023-11-10 22:14:33,611 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:38,945 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:38,945 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:38,945 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:38,946 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:38,946 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:38,946 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:38,946 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:40,210 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:14:43,014 INFO  [main] Clicking on element //a[contains(@href, 'register')]
+2023-11-10 22:14:43,688 INFO  [main] Quitting WebDriver
+2023-11-10 22:14:44,132 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:49,819 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:49,819 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:49,820 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:49,820 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:49,820 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:49,820 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:49,820 INFO  [main] Initializing WebDriver
+2023-11-10 22:14:51,300 INFO  [main] Clicking on element (//h4[@class='title']/a[@class='text-ellipsis-2' and text()='iMac'])[1]
+2023-11-10 22:14:53,508 INFO  [main] Clicking on element (//button[@title='Add to Cart'])[2]
+2023-11-10 22:14:54,321 INFO  [main] Clicking on element //button[@class='ml-2 mb-1 close' and @data-dismiss='toast' and @aria-label='Close']
+2023-11-10 22:14:54,416 INFO  [main] Clicking on element (//div[@class='cart-icon'])[1]
+2023-11-10 22:14:55,164 INFO  [main] Quitting WebDriver
+2023-11-10 22:14:55,699 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:01,349 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:01,350 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:01,350 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:01,350 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:01,350 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:01,350 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:01,350 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:02,769 INFO  [main] Clicking on element (//h4[@class='title']/a[@class='text-ellipsis-2' and text()='iMac'])[1]
+2023-11-10 22:15:05,154 INFO  [main] Clicking on element (//button[@title='Add to Cart'])[2]
+2023-11-10 22:15:05,948 INFO  [main] Clicking on element //button[@class='ml-2 mb-1 close' and @data-dismiss='toast' and @aria-label='Close']
+2023-11-10 22:15:06,041 INFO  [main] Clicking on element (//div[@class='cart-icon'])[1]
+2023-11-10 22:15:06,786 INFO  [main] Clicking on element //body/div[1]/div[3]/div[1]/div[2]/div[1]/div[2]/a[1]
+2023-11-10 22:15:08,481 INFO  [main] Quitting WebDriver
+2023-11-10 22:15:08,859 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:14,270 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:14,270 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:14,270 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:14,270 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:14,271 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:14,271 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:14,271 INFO  [main] Initializing WebDriver
+2023-11-10 22:15:15,469 INFO  [main] Clicking on element (//h4[@class='title']/a[@class='text-ellipsis-2' and text()='iMac'])[1]
+2023-11-10 22:15:17,444 INFO  [main] Clicking on element (//button[@title='Add to Cart'])[2]
+2023-11-10 22:15:18,253 INFO  [main] Clicking on element //button[@class='ml-2 mb-1 close' and @data-dismiss='toast' and @aria-label='Close']
+2023-11-10 22:15:18,350 INFO  [main] Clicking on element (//div[@class='cart-icon'])[1]
+2023-11-10 22:15:19,154 INFO  [main] Clicking on element //a[@class='icon-right both btn btn-primary btn-lg btn-block']
+2023-11-10 22:15:20,236 INFO  [main] Clicking on element //tbody/tr[1]/td[4]/div[1]/div[1]/button[2]
+2023-11-10 22:15:20,927 INFO  [main] Quitting WebDriver
