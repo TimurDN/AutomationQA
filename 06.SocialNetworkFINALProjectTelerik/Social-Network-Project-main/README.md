@@ -18,13 +18,9 @@ We have adopted the Agile Scrumban methodology, organizing our work into sprints
 
 # Project Sections
 
-0.0. **[Project Specifications](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/00ProjectSpecifications)**
-  
-    - Contains the detailed test plan for the project.
-
-0.0. **[Test Requirements](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/00TestRequirements)**
-  
-    - Provides insights into team scheduling and test scheduling, along with associated dates.
+0. **[Project Specifications](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/00ProjectSpecifications)** and **[Test Requirements](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/00TestRequirements)**
+   - Contains the detailed test plan for the project.
+   - Provides insights into team scheduling and test scheduling, along with associated dates.
 
 1. **[WEAre Test Plan](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/01WEareTestPlan)**
    - Contains the detailed test plan for the project.
@@ -44,7 +40,7 @@ We have adopted the Agile Scrumban methodology, organizing our work into sprints
 6. **[JMeter Performance Testing and Report](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/05JMeterPerformanceTestingAndReport)**
    - Contains performance testing conducted with JMeter and provides associated instructions and Jmeter report inside [(index.html)](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/05JMeterPerformanceTestingAndReport/ReportFolderJMeter) folder.
   
-6. **[ZAP Security Testing and Report](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/07ZAPSecurityTestingReport)**
+7. **[ZAP Security Testing and Report](https://github.com/FINAL-PROJECT-T-H-K/Social-Network-Project/tree/main/07ZAPSecurityTestingReport)**
    - Contains performance testing conducted with JMeter and provides associated instructions.
 
 Feel free to explore each section to gain a comprehensive understanding of our project's testing and development process. Your interest and support are greatly appreciated as we continue to refine and enhance the WEAre Social Network project.
