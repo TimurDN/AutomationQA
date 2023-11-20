@@ -188,7 +188,7 @@ public class UserActions {
         waitForElementVisibleUntilTimeout(locatorKey, defaultTimeout, arguments);
     }
 
-    public void waitTillElementIsVisibleUsingWebElement(WebElement element){
+    public void waitTillElementIsVisibleUsingWebElement(WebElement element) {
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
     }
 

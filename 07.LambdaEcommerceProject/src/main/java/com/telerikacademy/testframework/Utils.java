@@ -9,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Properties;
 
 public class Utils {
@@ -73,8 +72,6 @@ public class Utils {
         Faker faker = new Faker();
         return faker.internet().emailAddress();
     }
-
-
 
 
 }

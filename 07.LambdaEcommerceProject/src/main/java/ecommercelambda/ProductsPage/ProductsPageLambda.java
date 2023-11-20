@@ -1,7 +1,6 @@
 package ecommercelambda.ProductsPage;
 
 import ecommercelambda.BasePage.BasePageLambda;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ProductsPageLambda extends BasePageLambda {

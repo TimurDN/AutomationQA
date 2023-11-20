@@ -1,6 +1,5 @@
 package ecommercelambda.LoginPage;
 
-import com.telerikacademy.pages.BasePage;
 import ecommercelambda.BasePage.BasePageLambda;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

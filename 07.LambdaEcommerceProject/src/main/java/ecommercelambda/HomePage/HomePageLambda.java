@@ -1,7 +1,6 @@
 package ecommercelambda.HomePage;
 
 import ecommercelambda.BasePage.BasePageLambda;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
 public class HomePageLambda extends BasePageLambda {

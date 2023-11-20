@@ -11,7 +11,8 @@ public class ConfirmOrderPageElements extends BasePageLambda {
     }
 
     public WebElement confirmOrderButton() {
-        return driver.findElement(By.xpath("//button[@id='button-confirm']"));
+        return driver.findElement(By.xpath(
+                "//button[@id='button-confirm']"));
     }
 
     public WebElement successfulOrderMessage() {

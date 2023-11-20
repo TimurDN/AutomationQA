@@ -20,11 +20,13 @@ public class HomePageElements extends BasePageLambda {
     }
 
     public WebElement homeLoginButton() {
-        return driver.findElement(By.xpath("(//a[contains(@href, 'login')])[1]"));
+        return driver.findElement(By.xpath(
+                "(//a[contains(@href, 'login')])[1]"));
     }
 
     public WebElement homeLogoutButton() {
-        return driver.findElement(By.xpath("//a[contains(@href, 'logout')]"));
+        return driver.findElement(By.xpath(
+                "//a[contains(@href, 'logout')]"));
     }
 
     public WebElement homeSearchBar() {
@@ -48,7 +50,8 @@ public class HomePageElements extends BasePageLambda {
     }
 
     public WebElement searchResultProductPrice(String price) {
-        return driver.findElement(By.xpath(String.format("(//span[@class='price-new' and text()='%s'])[1]", price)));
+        return driver.findElement(By.xpath(String.format(
+                "(//span[@class='price-new' and text()='%s'])[1]", price)));
 
     }
 

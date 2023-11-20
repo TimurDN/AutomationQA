@@ -35,15 +35,18 @@ public class CheckOutPageElements extends BasePageLambda {
     }
 
     public WebElement billingFormPaymentCountryDropDown() {
-        return driver.findElement(By.id("input-payment-country"));
+        return driver.findElement(By.id(
+                "input-payment-country"));
     }
 
     public WebElement billingFormPaymentCityDropDown() {
-        return driver.findElement(By.id("input-payment-zone"));
+        return driver.findElement(By.id(
+                "input-payment-zone"));
     }
 
     public WebElement billingFormAgreeTermsBox() {
-        return driver.findElement(By.xpath("//label[@for='input-agree']"));
+        return driver.findElement(By.xpath(
+                "//label[@for='input-agree']"));
     }
 
     public WebElement billingFormSubmitButton() {
@@ -51,11 +54,13 @@ public class CheckOutPageElements extends BasePageLambda {
     }
 
     public WebElement confirmOrderText() {
-        return driver.findElement(By.xpath("//h1[text()='Confirm Order']"));
+        return driver.findElement(By.xpath(
+                "//h1[text()='Confirm Order']"));
     }
 
     public WebElement checkOutPageAddedProductByName(String name) {
-        return driver.findElement(By.xpath(String.format("//td[@class='text-left' and contains(text(), '%s')]", name)));
+        return driver.findElement(By.xpath(String.format(
+                "//td[@class='text-left' and contains(text(), '%s')]", name)));
     }
 
 
