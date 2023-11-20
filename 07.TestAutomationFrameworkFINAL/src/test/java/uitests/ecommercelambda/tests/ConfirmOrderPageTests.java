@@ -1,5 +1,6 @@
 package uitests.ecommercelambda.tests;
 
+import com.telerikacademy.testframework.Utils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
@@ -16,15 +17,15 @@ public class ConfirmOrderPageTests extends BaseTestLambda {
     @Test
     public void placingOrderSuccessfullyTest() throws InterruptedException {
 
-        firstName += registerPageLambda.generateUser();
-        lastName += registerPageLambda.generateUser();
-        password += registerPageLambda.generatePassword();
-        email += registerPageLambda.generateEmail();
+        firstName += Utils.generateUser();
+        lastName += Utils.generateUser();
+        password += Utils.generatePassword();
+        email += Utils.generateEmail();
 
         homePageLambda.navigateToPage();
         homePageLambda.navigateToRegisterButton();
         registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
-        homePageLambda.clickOnLogoutButton();
+        homePageLambda.logoutUser();
 
         homePageLambda.navigateToLoginButton();
         loginPageLambda.loginUser(email, password);
@@ -34,22 +35,22 @@ public class ConfirmOrderPageTests extends BaseTestLambda {
         productsPageLambda.selectProductSize();
 
         productsPageLambda.addToCartFromProductPage();
-        shoppingCartPageLambda.clickCheckOutButtonInShoppingCart();
+        shoppingCartPageLambda.clickCheckOutButtonPopUp();
 
         checkOutPageLambda.fillInBillingDetailsAndCheckOut(firstName, lastName,
                 COMPANY_NAME, COMPANY_ADDRESS, CITY_SOFIA, POST_CODE_SOFIA);
 
-        checkOutPageLambda.assertNavigationToConfirmOrderAfterCheckOut();
-        checkOutPageLambda.assertProductIsInCheckOutPage(PRODUCT_CANON_EOS_5_D);
+        checkOutPageLambda.checkOutPageAssertions().assertNavigationToConfirmOrderAfterCheckOut();
+        checkOutPageLambda.checkOutPageAssertions().assertProductIsInCheckOutPage(PRODUCT_CANON_EOS_5_D);
 
         confirmOrderPageLambda.clickOnConfirmOrderButton();
-        confirmOrderPageLambda.assertOrderIsSuccessful();
+        confirmOrderPageLambda.confirmOrderPageAssertions().assertOrderIsSuccessful();
 
     }
 
     @AfterEach
     public void logOut() {
         homePageLambda.navigateToPage();
-        homePageLambda.clickOnLogoutButton();
+        homePageLambda.logoutUser();
     }
 }

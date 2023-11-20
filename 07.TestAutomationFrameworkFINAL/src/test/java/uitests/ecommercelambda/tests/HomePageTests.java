@@ -16,14 +16,14 @@ public class HomePageTests extends BaseTestLambda {
 
     @Test
     public void homePageNavigatedTest() {
-        homePageLambda.assertHomePageNavigated();
+        homePageLambda.homePageAssertions().assertHomePageNavigated();
     }
 
     @Test
     public void searchExistingProductVerifyNameAndPriceTest() {
         homePageLambda.searchForSpecificProduct(PRODUCT_IPHONE);
 
-        homePageLambda.assertSearchedProductInSearchResults(PRODUCT_IPHONE);
-        homePageLambda.assertSearchedProductPriceIsCorrect(IPHONE_PRICE);
+        homePageLambda.homePageAssertions().assertSearchedProductInSearchResults(PRODUCT_IPHONE);
+        homePageLambda.homePageAssertions().assertSearchedProductPriceIsCorrect(IPHONE_PRICE);
     }
 }

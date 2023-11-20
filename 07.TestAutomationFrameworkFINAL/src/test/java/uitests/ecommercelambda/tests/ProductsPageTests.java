@@ -1,5 +1,6 @@
 package uitests.ecommercelambda.tests;
 
+import com.telerikacademy.testframework.Utils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -19,55 +20,58 @@ public class ProductsPageTests extends BaseTestLambda {
     }
 
     @Test
-    public void compareTwoProductsComparesSelectedProductsCorrectlyTest() {
+    public void compareTwoProductsComparesSelectedProductsCorrectlyTest() throws InterruptedException {
         homePageLambda.searchForSpecificProduct(PRODUCT_IPHONE);
         homePageLambda.clickOnSearchedProduct(PRODUCT_IPHONE);
 
         productsPageLambda.addProductToCompare();
-        Assertions.assertTrue(productsPageLambda.assertProductAddedToCompareListMessage(PRODUCT_IPHONE));
+        Assertions.assertTrue(productsPageLambda.productsPageAssertions().
+                assertProductAddedToCompareListMessage(PRODUCT_IPHONE));
 
         homePageLambda.navigateToPage();
 
         homePageLambda.searchForSpecificProduct(PRODUCT_HTC_TOUCH_HD);
         homePageLambda.clickOnSearchedProduct(PRODUCT_HTC_TOUCH_HD);
         productsPageLambda.addProductToCompare();
-        Assertions.assertTrue(productsPageLambda.assertProductAddedToCompareListMessage(PRODUCT_HTC_TOUCH_HD));
+        Assertions.assertTrue(productsPageLambda.productsPageAssertions().
+                assertProductAddedToCompareListMessage(PRODUCT_HTC_TOUCH_HD));
 
         productsPageLambda.clickOnCompareButton();
-        productsPageLambda.assertComparisonPageNavigated();
-        productsPageLambda.assertComparedProductName1(PRODUCT_IPHONE);
-        productsPageLambda.assertComparedProductName2(PRODUCT_HTC_TOUCH_HD);
-        productsPageLambda.assertComparedCorrectPriceOfProduct1(IPHONE_PRICE);
-        productsPageLambda.assertComparedCorrectPriceOfProduct2(HTC_TOUCH_HD_PRICE);
+        productsPageLambda.productsPageAssertions().assertComparisonPageNavigated();
+        productsPageLambda.productsPageAssertions().assertComparedProductName(PRODUCT_IPHONE);
+        productsPageLambda.productsPageAssertions().assertComparedProductName(PRODUCT_HTC_TOUCH_HD);
+        productsPageLambda.productsPageAssertions().assertComparedCorrectPriceOfProduct(IPHONE_PRICE);
+        productsPageLambda.productsPageAssertions().assertComparedCorrectPriceOfProduct(HTC_TOUCH_HD_PRICE);
 
     }
 
     @Test
-    public void addToCartButtonAddsProductToCartTest() {
+    public void addToCartButtonAddsProductToCartTest() throws InterruptedException {
         homePageLambda.searchForSpecificProduct(PRODUCT_CANON_EOS_5_D);
         homePageLambda.clickOnSearchedProduct(PRODUCT_CANON_EOS_5_D);
 
         productsPageLambda.selectProductSize();
         productsPageLambda.addToCartFromProductPage();
 
-        Assertions.assertTrue(productsPageLambda.assertProductAddedToCartListMessage(PRODUCT_CANON_EOS_5_D));
+        Assertions.assertTrue(productsPageLambda.productsPageAssertions().
+                assertProductAddedToCartListMessage(PRODUCT_CANON_EOS_5_D));
 
     }
 
     @Test
-    public void wishListButtonAddsProductToWishListTest() {
-        firstName += registerPageLambda.generateUser();
-        lastName += registerPageLambda.generateUser();
-        password += registerPageLambda.generatePassword();
-        email += registerPageLambda.generateEmail();
+    public void wishListButtonAddsProductToWishListTest() throws InterruptedException {
+        firstName += Utils.generateUser();
+        lastName += Utils.generateUser();
+        password += Utils.generatePassword();
+        email += Utils.generateEmail();
 
         homePageLambda.navigateToRegisterButton();
         registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
 
         homePageLambda.searchForSpecificProduct(PRODUCT_PALM_TREO_PRO);
-        productsPageLambda.addProductToWishList();
+        productsPageLambda.addProductToWishList(PRODUCT_PALM_TREO_PRO);
 
-        productsPageLambda.assertProductAddedToWishListMessage(PRODUCT_PALM_TREO_PRO);
+        productsPageLambda.productsPageAssertions().assertProductAddedToWishListMessage(PRODUCT_PALM_TREO_PRO);
 
     }
 

@@ -1,5 +1,6 @@
 package uitests.ecommercelambda.tests;
 
+import com.telerikacademy.testframework.Utils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
@@ -16,10 +17,10 @@ public class LoginPageTests extends BaseTestLambda {
     @BeforeEach
     public void beforeTestSetup() {
 
-        firstName += registerPageLambda.generateUser();
-        lastName += registerPageLambda.generateUser();
-        password += registerPageLambda.generatePassword();
-        email += registerPageLambda.generateEmail();
+        firstName += Utils.generateUser();
+        lastName += Utils.generateUser();
+        password += Utils.generatePassword();
+        email += Utils.generateEmail();
 
         homePageLambda.navigateToPage();
 
@@ -29,7 +30,7 @@ public class LoginPageTests extends BaseTestLambda {
     public void loginFormAccessTest() {
         homePageLambda.navigateToLoginButton();
 
-        loginPageLambda.assertLoginFormElementsDisplayed();
+        loginPageLambda.loginPageAssertions().assertLoginFormElementsDisplayed();
 
     }
 
@@ -37,10 +38,11 @@ public class LoginPageTests extends BaseTestLambda {
     public void loginWithValidCredentials() {
         homePageLambda.navigateToRegisterButton();
         registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
-        homePageLambda.clickOnLogoutButton();
+        homePageLambda.logoutUser();
 
         loginPageLambda.loginUser(email, password);
-        loginPageLambda.assertAuthenticatedUser();
+
+        loginPageLambda.loginPageAssertions().assertAuthenticatedUser();
 
     }
 
@@ -48,12 +50,11 @@ public class LoginPageTests extends BaseTestLambda {
     public void loginWithValidUsernameAndInvalidPassword() {
         homePageLambda.navigateToRegisterButton();
         registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
-        homePageLambda.clickOnLogoutButton();
+        homePageLambda.logoutUser();
 
-        loginPageLambda.loginUserWithInvalidPassword(email, INVALID_PASSWORD);
-        loginPageLambda.assertAuthenticationError();
+        loginPageLambda.loginUser(email, INVALID_PASSWORD);
+        loginPageLambda.loginPageAssertions().assertAuthenticationError();
 
     }
-
 
 }

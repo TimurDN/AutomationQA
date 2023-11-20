@@ -1,5 +1,7 @@
 package uitests.ecommercelambda.tests;
 
+import com.telerikacademy.testframework.Utils;
+import ecommercelambda.RegisterPage.RegisterPageAssertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import uitests.ecommercelambda.base.BaseTestLambda;
@@ -16,13 +18,12 @@ public class RegisterPageTests extends BaseTestLambda {
     @BeforeEach
     public void beforeTestSetup() {
 
-        firstName += registerPageLambda.generateUser();
-        lastName += registerPageLambda.generateUser();
-        password += registerPageLambda.generatePassword();
-        email += registerPageLambda.generateEmail();
+        firstName += Utils.generateUser();
+        lastName += Utils.generateUser();
+        password += Utils.generatePassword();
+        email += Utils.generateEmail();
         homePageLambda.navigateToPage();
         homePageLambda.navigateToRegisterButton();
-
     }
 
     @Test
@@ -30,30 +31,29 @@ public class RegisterPageTests extends BaseTestLambda {
         homePageLambda.navigateToPage();
         homePageLambda.navigateToRegisterButton();
 
-        registerPageLambda.assertRegisterFormDisplayed();
-
+        registerPageLambda.registerPageAssertions().assertRegisterFormDisplayed();
     }
 
     @Test
     public void registerUserWithMandatoryFieldsTest() {
         registerPageLambda.registerUser(firstName, lastName, email, password, PHONE_NUMBER);
-        registerPageLambda.assertSuccessfulRegistration();
+
+        registerPageLambda.registerPageAssertions().assertSuccessfulRegistration();
     }
 
     @Test
     public void registerUserWithExistingEmailTest() {
         registerPageLambda.registerUser(firstName, lastName, EXISTING_EMAIL, password, PHONE_NUMBER);
-        registerPageLambda.assertExistingEmailErrorMessage();
 
-
+        registerPageLambda.registerPageAssertions().assertExistingEmailErrorMessage();
     }
 
     @Test
     public void errorMessagesWhenEmptyFieldsSubmittedTest() {
         registerPageLambda.registerUser("",
                 "", "", "", "");
-        registerPageLambda.assertUserIsNotNavigatedToNextPage();
-        registerPageLambda.assertRegisterFormErrorMessagesForEmptyFields();
 
+        registerPageLambda.registerPageAssertions().assertUserIsNotNavigatedToNextPage();
+        registerPageLambda.registerPageAssertions().assertRegisterFormErrorMessagesForEmptyFields();
     }
 }

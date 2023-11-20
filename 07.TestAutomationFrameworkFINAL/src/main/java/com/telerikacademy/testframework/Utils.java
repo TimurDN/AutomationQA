@@ -1,5 +1,7 @@
 package com.telerikacademy.testframework;
 
+import com.github.javafaker.Faker;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -56,6 +58,23 @@ public class Utils {
         return duration.toMinutes();
 
     }
+
+    public static String generateUser() {
+        String username = RandomStringUtils.randomAlphabetic(4);
+        return "User" + username;
+    }
+
+    public static String generatePassword() {
+        String randomPass = RandomStringUtils.randomAlphabetic(5);
+        return "password" + randomPass;
+    }
+
+    public static String generateEmail() {
+        Faker faker = new Faker();
+        return faker.internet().emailAddress();
+    }
+
+
 
 
 }

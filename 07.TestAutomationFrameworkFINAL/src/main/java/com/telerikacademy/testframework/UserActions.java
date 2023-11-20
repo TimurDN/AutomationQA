@@ -15,6 +15,7 @@ import static java.lang.String.format;
 public class UserActions {
 
     final WebDriver driver;
+    WebDriverWait webDriverWait;
     int defaultTimeout = Integer.parseInt(Utils.getConfigPropertyByKey("config.defaultTimeoutSeconds"));
 
     public WebDriver getDriver() {
@@ -23,6 +24,7 @@ public class UserActions {
 
     public UserActions() {
         this.driver = Utils.getWebDriver();
+        this.webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(defaultTimeout));
     }
 
     public static void loadBrowser(String baseUrlKey) {
@@ -38,6 +40,11 @@ public class UserActions {
 
         Utils.LOGGER.info("Clicking on element " + key);
         WebElement element = driver.findElement(By.xpath(locator));
+        element.click();
+    }
+
+    public void clickElementUsingWebElement(WebElement element) {
+        Utils.LOGGER.info("Clicking on the provided element.");
         element.click();
     }
 
@@ -70,6 +77,17 @@ public class UserActions {
         element.sendKeys(Keys.ENTER);
 
     }
+
+    public void keyboardActionArrowDownUsingWebElement(WebElement element) {
+        Utils.LOGGER.info("Performing keyboard action (Arrow Down) on element");
+        element.sendKeys(Keys.ARROW_DOWN);
+    }
+
+    public void keyboardActionEnterUsingWebElement(WebElement element) {
+        Utils.LOGGER.info("Performing keyboard action (Enter) on element");
+        element.sendKeys(Keys.ENTER);
+    }
+
 
     public void keyboardActionSpace(String key) {
 
@@ -131,6 +149,13 @@ public class UserActions {
 
     }
 
+    public void scrollToElementUsingWebElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        // Scrolling down the page till the element is found
+        js.executeScript("arguments[0].scrollIntoView();", element);
+
+    }
+
     public void scrollDown(int pixels) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, " + pixels + ");");
@@ -150,11 +175,21 @@ public class UserActions {
 
     }
 
+    public void mouseHoverByUsingWebElement(WebElement element) {
+        Actions action = new Actions(driver);
+        action.moveToElement(element).perform();
+    }
+
+
     //############# WAITS #########
     public void waitForElementVisible(String locatorKey, Object... arguments) {
         int defaultTimeout = Integer.parseInt(Utils.getConfigPropertyByKey("config.defaultTimeoutSeconds"));
 
         waitForElementVisibleUntilTimeout(locatorKey, defaultTimeout, arguments);
+    }
+
+    public void waitTillElementIsVisibleUsingWebElement(WebElement element){
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public void waitForElementClickable(String locatorKey, Object... arguments) {
@@ -191,6 +226,9 @@ public class UserActions {
                 format("Element with %s doesn't present.", locator));
     }
 
+    public void assertElementPresentUsingWebElement(WebElement element, Object... arguments) {
+        Assertions.assertNotNull(element, String.format("Element with %s doesn't present.", element));
+    }
 
     public void assertValueIncreasedBy(int actual, int expected) {
         Assertions.assertEquals(actual, expected, String.format("Actual value: %s is not equal to the expected value: %s one.",

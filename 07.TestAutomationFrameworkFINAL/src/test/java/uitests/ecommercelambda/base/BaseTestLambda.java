@@ -2,14 +2,19 @@ package uitests.ecommercelambda.base;
 
 import com.telerikacademy.testframework.CustomWebDriverManager;
 import com.telerikacademy.testframework.UserActions;
-import ecommercelambda.*;
+import ecommercelambda.CheckOutPage.CheckOutPageLambda;
+import ecommercelambda.ConfirmOrderPage.ConfirmOrderPageLambda;
+import ecommercelambda.HomePage.HomePageLambda;
+import ecommercelambda.LoginPage.LoginPageLambda;
+import ecommercelambda.ProductsPage.ProductsPageLambda;
+import ecommercelambda.RegisterPage.RegisterPageLambda;
+import ecommercelambda.ShoppingCartPage.ShoppingCartPageLambda;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTestLambda {
 
-    public static UserActions actions = new UserActions();
     //PAGES
     public static HomePageLambda homePageLambda;
     public static CheckOutPageLambda checkOutPageLambda;
