@@ -11,11 +11,14 @@ public class ConfirmOrderPageElements extends BasePageLambda {
     }
 
     public WebElement confirmOrderButton() {
+        actions.waitForElementClickable("//button[@id='button-confirm']");
         return driver.findElement(By.xpath(
                 "//button[@id='button-confirm']"));
     }
 
     public WebElement successfulOrderMessage() {
+        actions.waitTillElementIsVisible(
+                "//li[@class='breadcrumb-item active' and contains(text(), 'Success')]");
         return driver.findElement(By.xpath(
                 "//li[@class='breadcrumb-item active' and contains(text(), 'Success')]"));
     }

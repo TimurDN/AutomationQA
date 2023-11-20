@@ -11,30 +11,36 @@ public class HomePageElements extends BasePageLambda {
     }
 
     public WebElement homeMyAccountButton() {
+        actions.waitForElementClickable("(//span[contains(text(), 'My account')])[2]");
         return driver.findElement(By.xpath(
                 "(//span[contains(text(), 'My account')])[2]"));
     }
 
     public WebElement homeRegisterButton() {
+        actions.waitForElementClickable("(//a[contains(@href, 'register')])[1]");
         return driver.findElement(By.xpath("(//a[contains(@href, 'register')])[1]"));
     }
 
     public WebElement homeLoginButton() {
+        actions.waitForElementClickable("(//a[contains(@href, 'login')])[1]");
         return driver.findElement(By.xpath(
                 "(//a[contains(@href, 'login')])[1]"));
     }
 
     public WebElement homeLogoutButton() {
+        actions.waitForElementClickable("//a[contains(@href, 'logout')]");
         return driver.findElement(By.xpath(
                 "//a[contains(@href, 'logout')]"));
     }
 
     public WebElement homeSearchBar() {
+        actions.waitForElementClickable("(//input[@type='text'][@placeholder='Search For Products'])[1]");
         return driver.findElement(By.xpath(
                 "(//input[@type='text'][@placeholder='Search For Products'])[1]"));
     }
 
     public WebElement searchedProductByName(String name) {
+        actions.waitTillElementIsVisible(String.format("(//h4[@class='title']/a[text()='%s'])[2]", name));
         return driver.findElement(By.xpath(String.format("(//h4[@class='title']/a[text()='%s'])[2]", name)));
 
     }

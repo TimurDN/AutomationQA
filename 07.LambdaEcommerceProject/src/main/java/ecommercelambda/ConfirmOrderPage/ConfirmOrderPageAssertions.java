@@ -8,9 +8,7 @@ public class ConfirmOrderPageAssertions extends BasePageLambda {
         super(driver, "lambda.homepage");
     }
 
-    public void assertOrderIsSuccessful() throws InterruptedException {
-        Thread.sleep(2000);//will be improved, will avoid using it.
-        actions.waitTillElementIsVisibleUsingWebElement(confirmOrderPageElements().successfulOrderMessage());
+    public void assertOrderIsSuccessful() {
         actions.assertElementPresentUsingWebElement(confirmOrderPageElements().successfulOrderMessage());
 
     }

@@ -8,15 +8,11 @@ public class CheckOutPageAssertions extends BasePageLambda {
         super(driver, "lambda.homepage");
     }
 
-    public void assertNavigationToConfirmOrderAfterCheckOut() throws InterruptedException {
-        Thread.sleep(2000); //will be improved, will avoid using thread sleep.
-        actions.waitTillElementIsVisibleUsingWebElement(checkOutPageElements().confirmOrderText());
+    public void assertNavigationToConfirmOrderAfterCheckOut() {
         actions.assertElementPresentUsingWebElement(checkOutPageElements().confirmOrderText());
     }
 
     public void assertProductIsInCheckOutPage(String productName) {
-        actions.waitTillElementIsVisibleUsingWebElement(
-                checkOutPageElements().checkOutPageAddedProductByName(productName));
         actions.assertElementPresentUsingWebElement(
                 checkOutPageElements().checkOutPageAddedProductByName(productName));
     }

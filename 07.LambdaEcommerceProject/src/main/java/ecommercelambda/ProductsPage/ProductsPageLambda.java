@@ -10,28 +10,22 @@ public class ProductsPageLambda extends BasePageLambda {
     }
 
     public void addProductToCompare() {
-        actions.waitTillElementIsVisibleUsingWebElement(productsPageElements().addProductCompareButton());
         productsPageElements().addProductCompareButton().click();
     }
 
-    public void clickOnCompareButton() {
-        actions.waitTillElementIsVisibleUsingWebElement(productsPageElements().navigateToComparingPageButton());
+    public void clickOnCompareButton() throws InterruptedException {
         productsPageElements().navigateToComparingPageButton().click();
     }
 
     public void clickOnCartButton() {
-        actions.waitTillElementIsVisibleUsingWebElement(productsPageElements().cartButton());
         productsPageElements().cartButton().click();
     }
 
-    public void addToCartFromProductPage() throws InterruptedException {
-        actions.waitTillElementIsVisibleUsingWebElement(productsPageElements().addToCartButton());
-        Thread.sleep(2000);
+    public void addToCartFromProductPage() {
         productsPageElements().addToCartButton().click();
     }
 
     public void selectProductSize() {
-        actions.waitTillElementIsVisibleUsingWebElement(productsPageElements().productSizeDropDown());
         productsPageElements().productSizeDropDown().click();
 
         actions.keyboardActionArrowDownUsingWebElement(productsPageElements().productSizeDropDown());
@@ -39,10 +33,8 @@ public class ProductsPageLambda extends BasePageLambda {
     }
 
     public void addProductToWishList(String productName) {
-        actions.waitTillElementIsVisibleUsingWebElement(productsPageElements().productByName(productName));
         actions.mouseHoverByUsingWebElement(productsPageElements().productByName(productName));
 
-        actions.waitTillElementIsVisibleUsingWebElement(productsPageElements().addProductToWishListByName(productName));
         productsPageElements().addProductToWishListByName(productName).click();
     }
 

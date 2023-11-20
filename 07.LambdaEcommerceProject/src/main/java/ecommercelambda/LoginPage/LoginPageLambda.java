@@ -9,12 +9,9 @@ public class LoginPageLambda extends BasePageLambda {
     }
 
     public void loginUser(String email, String password) {
-
         navigateToPage();
-        actions.waitTillElementIsVisibleUsingWebElement(loginPageElements().loginEmailField());
         loginPageElements().loginEmailField().sendKeys(email);
 
-        actions.waitTillElementIsVisibleUsingWebElement(loginPageElements().loginPasswordField());
         loginPageElements().loginPasswordField().sendKeys(password);
 
         loginPageElements().loginSubmitButton().click();

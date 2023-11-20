@@ -13,37 +13,26 @@ public class RegisterPageAssertions extends BasePageLambda {
     }
 
     public void assertRegisterFormDisplayed() {
-        actions.waitTillElementIsVisibleUsingWebElement(registerPageElements().registerAccountText());
         actions.assertElementPresentUsingWebElement(registerPageElements().registerAccountText());
 
     }
 
     public void assertExistingEmailErrorMessage() {
-        actions.waitTillElementIsVisibleUsingWebElement(registerPageElements().registerExistingEmailErrorMessage());
         actions.assertElementPresentUsingWebElement(registerPageElements().registerExistingEmailErrorMessage());
 
     }
 
     public void assertUserIsNotNavigatedToNextPage() {
-        actions.waitTillElementIsVisibleUsingWebElement(registerPageElements().registerAccountText());
         actions.assertElementPresentUsingWebElement(registerPageElements().registerAccountText());
     }
 
     public void assertRegisterFormErrorMessagesForEmptyFields() {
         //separate assertions into methods
-        actions.waitTillElementIsVisibleUsingWebElement(registerPageElements().registerFirstNameFieldErrorMessage());
         actions.assertElementPresentUsingWebElement(registerPageElements().registerFirstNameFieldErrorMessage());
-
-        actions.clickElementUsingWebElement(registerPageElements().registerLastNameFieldErrorMessage());
+        registerPageElements().registerLastNameFieldErrorMessage().click();
         actions.assertElementPresentUsingWebElement(registerPageElements().registerLastNameFieldErrorMessage());
-
-        actions.waitTillElementIsVisibleUsingWebElement(registerPageElements().registerEmailFieldErrorMessage());
         actions.assertElementPresentUsingWebElement(registerPageElements().registerEmailFieldErrorMessage());
-
-        actions.waitTillElementIsVisibleUsingWebElement(registerPageElements().registerPhoneFieldErrorMessage());
         actions.assertElementPresentUsingWebElement(registerPageElements().registerPhoneFieldErrorMessage());
-
-        actions.waitTillElementIsVisibleUsingWebElement(registerPageElements().registerPasswordFieldErrorMessage());
         actions.assertElementPresentUsingWebElement(registerPageElements().registerPasswordFieldErrorMessage());
 
     }

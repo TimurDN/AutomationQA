@@ -10,27 +10,23 @@ public class HomePageLambda extends BasePageLambda {
 
     public void navigateToRegisterButton() {
         actions.mouseHoverByUsingWebElement(homePageElements().homeMyAccountButton());
-        actions.waitTillElementIsVisibleUsingWebElement(homePageElements().homeRegisterButton());
         homePageElements().homeRegisterButton().click();
 
     }
 
     public void navigateToLoginButton() {
         actions.mouseHoverByUsingWebElement(homePageElements().homeMyAccountButton());
-        actions.waitTillElementIsVisibleUsingWebElement(homePageElements().homeLoginButton());
         homePageElements().homeLoginButton().click();
 
     }
 
     public void logoutUser() {
         actions.mouseHoverByUsingWebElement(homePageElements().homeMyAccountButton());
-        actions.waitTillElementIsVisibleUsingWebElement(homePageElements().homeLogoutButton());
         homePageElements().homeLogoutButton().click();
 
     }
 
     public void searchForSpecificProduct(String productName) {
-        actions.waitTillElementIsVisibleUsingWebElement(homePageElements().homeSearchBar());
         homePageElements().homeSearchBar().click();
 
         homePageElements().homeSearchBar().sendKeys(productName);
@@ -38,7 +34,6 @@ public class HomePageLambda extends BasePageLambda {
     }
 
     public void clickOnSearchedProduct(String name) {
-        actions.waitTillElementIsVisibleUsingWebElement(homePageElements().searchedProductByName(name));
         homePageElements().searchedProductByName(name).click();
     }
 

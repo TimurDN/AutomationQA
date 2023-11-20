@@ -9,7 +9,6 @@ public class ConfirmOrderPageLambda extends BasePageLambda {
     }
 
     public void clickOnConfirmOrderButton() {
-        actions.waitTillElementIsVisibleUsingWebElement(confirmOrderPageElements().confirmOrderButton());
         confirmOrderPageElements().confirmOrderButton().click();
     }
 

@@ -53,7 +53,6 @@ public class Utils {
 
         Duration duration = Duration.between(dateTime1, dateTime2);
 
-        // Convert the duration to minutes
         return duration.toMinutes();
 
     }

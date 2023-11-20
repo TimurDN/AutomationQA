@@ -15,7 +15,7 @@ public class ConfirmOrderPageTests extends BaseTestLambda {
     String email = "";
 
     @Test
-    public void placingOrderSuccessfullyTest() throws InterruptedException {
+    public void placingOrderSuccessfullyTest() {
 
         firstName += Utils.generateUser();
         lastName += Utils.generateUser();

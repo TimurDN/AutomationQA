@@ -9,28 +9,22 @@ public class ShoppingCartPageLambda extends BasePageLambda {
     }
 
     public void closeAddedItemCartPopUp() {
-        actions.waitTillElementIsVisibleUsingWebElement(shoppingCartPageElements().closeButtonCartPopUp());
         shoppingCartPageElements().closeButtonCartPopUp().click();
     }
 
-    public void clickOnEditCartButton() {
-        actions.waitTillElementIsVisibleUsingWebElement(shoppingCartPageElements().editCartButton());
+    public void clickOnEditCartButton() {;
         shoppingCartPageElements().editCartButton().click();
     }
 
-    public void clickCheckOutButtonPopUp() throws InterruptedException {
-        Thread.sleep(2000);
-        actions.waitTillElementIsVisibleUsingWebElement(shoppingCartPageElements().checkOutButtonPopUp());
+    public void clickCheckOutButtonPopUp() {
         shoppingCartPageElements().checkOutButtonPopUp().click();
     }
 
     public void clickCheckOutButtonInShoppingCart() {
-        actions.waitTillElementIsVisibleUsingWebElement(shoppingCartPageElements().checkOutButtonInShoppingCart());
         shoppingCartPageElements().checkOutButtonInShoppingCart().click();
     }
 
     public void removeAddedItemFromCart() {
-        actions.waitTillElementIsVisibleUsingWebElement(shoppingCartPageElements().removeProductButton());
         shoppingCartPageElements().removeProductButton().click();
     }
 

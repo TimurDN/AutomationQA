@@ -14,7 +14,7 @@ public class CheckOutTests extends BaseTestLambda {
     String email = "";
 
     @Test
-    public void checkOutWithValidAddressDetailsAndFieldsTest() throws InterruptedException {
+    public void checkOutWithValidAddressDetailsAndFieldsTest() {
 
         firstName += Utils.generateUser();
         lastName += Utils.generateUser();

@@ -46,7 +46,7 @@ public class ProductsPageTests extends BaseTestLambda {
     }
 
     @Test
-    public void addToCartButtonAddsProductToCartTest() throws InterruptedException {
+    public void addToCartButtonAddsProductToCartTest() {
         homePageLambda.searchForSpecificProduct(PRODUCT_CANON_EOS_5_D);
         homePageLambda.clickOnSearchedProduct(PRODUCT_CANON_EOS_5_D);
 
@@ -59,7 +59,7 @@ public class ProductsPageTests extends BaseTestLambda {
     }
 
     @Test
-    public void wishListButtonAddsProductToWishListTest() throws InterruptedException {
+    public void wishListButtonAddsProductToWishListTest() {
         firstName += Utils.generateUser();
         lastName += Utils.generateUser();
         password += Utils.generatePassword();

@@ -9,14 +9,14 @@ import static com.telerikacademy.testframework.Constants.*;
 public class ShoppingCartTests extends BaseTestLambda {
 
     @BeforeEach
-    public void beforeTestSetup() throws InterruptedException {
+    public void beforeTestSetup() {
         homePageLambda.navigateToPage();
         homePageLambda.navigateToFirstTopProduct(PRODUCT_IMAC);
         productsPageLambda.addToCartFromProductPage();
     }
 
     @Test
-    public void addItemToTheShoppingCartTest() throws InterruptedException {
+    public void addItemToTheShoppingCartTest() {
         productsPageLambda.productsPageAssertions().assertProductAddedToCartListMessage(PRODUCT_IMAC);
         shoppingCartPageLambda.shoppingCartPageAssertions().assertShoppingCartBadgeByAddedAmount("1");
 
@@ -27,7 +27,7 @@ public class ShoppingCartTests extends BaseTestLambda {
     }
 
     @Test
-    public void removeAddedItemFromTheShoppingCartTest() throws InterruptedException {
+    public void removeAddedItemFromTheShoppingCartTest() {
         productsPageLambda.productsPageAssertions().assertProductAddedToCartListMessage(PRODUCT_IMAC);
         shoppingCartPageLambda.shoppingCartPageAssertions().assertShoppingCartBadgeByAddedAmount("1");
 
@@ -42,7 +42,7 @@ public class ShoppingCartTests extends BaseTestLambda {
     }
 
     @Test
-    public void userCanAccessCheckOutPageFromShoppingCartTest() throws InterruptedException {
+    public void userCanAccessCheckOutPageFromShoppingCartTest() {
         productsPageLambda.productsPageAssertions().assertProductAddedToCartListMessage(PRODUCT_IMAC);
         shoppingCartPageLambda.shoppingCartPageAssertions().assertShoppingCartBadgeByAddedAmount("1");
 
