@@ -5,24 +5,24 @@
 
 ## Priority Summary
 
-- **Highest Priority Test Cases:** 45
-  - Creating Strategy & Automated Tests*: 17 (completed in 5 days)
+- **Highest Priority Test Cases:** 86
+  - Creating Strategy & Automated Tests*: 17 (completed in 5 days(2 days planning, 3 days automating))
   - (See surefire report in target/site)
-  - Pending: 28
+  - Pending for manual and automation: 69
 
-- **High Priority Test Cases:** 13
-  - Pending for Manual & Automation
+- **High Priority Test Cases:** 27
+  - Pending for Manual & Automation: 27
 
-- **Medium Priority Test Cases:** 19
-  - Pending Manual
+- **Medium&Low Priority Test Cases:** 48 / 16
+  - Pending Manual: 64
 
 ## Estimated Timeline
 
-- **Estimated remaining time for completion of all tasks:** 10-12 business days
+- **Estimated remaining time for completion of all tasks:** 14-16 business days
 
 ## Test Case Overview
 
-## Total Cases: 77
+## Total Cases: 177
 
 ------
 
@@ -102,21 +102,101 @@
 - `removeItemFromShoppingCardTest(Highest)*`
 - `userCanAccessCheckOutPageFromShoppingCartTest(Highest)*`
 - `updateShoppingCartProductQuantityTest(Medium)`
-    - `updateShoppingCartWith0ProductsTest(Medium)`
-    - `updateShoppingCartWith9999ProductsTest(Medium)`
+  - `updateShoppingCartWith0ProductsTest(Medium)`
+  - `updateShoppingCartWith9999ProductsTest(Medium)`
 - `imageNameModelQuantityUnitPriceTotalTest(Highest)`
 - `homePageNavigationAfterClickContinueShoppingButtonTest(Medium)`
 - `confirmVatTaxForEuCountryTest(Highest)`
 - `flatShippingRateRecalculatedBasedOnSizeTest(Highest)`
 - `termsAndConditionsCheckButtonTest(Highest)`
+- `refreshButtonTest(High)`
+- `shoppingCartPageMaxCartItemTest(Medium)`
+- `useCouponCodePlusButtonTest(Medium)`
+- `useCouponCodeValidCouponTest(Medium)`
+- `useCouponCodeInvalidCouponTest(Medium)`
+- `useCouponCodeMaxCharacterTest(Medium)`
+- `useGiftCertificateValidCouponTest(Medium)`
+- `useGiftCertificateInvalidCouponTest(Medium)`
+- `useGiftCertificateMaxCharacterTest(Medium)`
+- `useGiftCertificateWithCouponCodeTest(Medium)`
+- `countryDropDownShowsSupportedCountriesTest(Highest)`
+- `regionStateDisplaysByCountryTest(High)`
+- `getQuotesRequiresFillingRequiredFieldsTest(Highest)`
+- `postCodeLowerBoundaryTest(Highest)`
+- `postCodeHigherBoundaryTest(Highest)`
+- `postCodeInvalidCharsTest(Medium)`
+- `getQuotesPopUpTitleTest(Highest)`
+- `flatRateCalculationTest(Highest)`
+- `cancelFlatRateDoesNotApplyTaxTest(Highest)`
+- `applyShippingTaxWhenApplyButtonClickedTest(Highest)`
+- `displayedFlatShippingRateAmountAddedToSubTotalTest(Highest)`
+- `successMessageAfterAddingFlatShippingRateTest(Medium)`
+- `continueShoppingButtonTest(Medium)`
 
 ### CheckOut Page
 
-- `phoneNumberMatchesUsersNumberTest(Highest)`
-- `billingAddressDropDownAllowsSelectDifferentAddressTest(Highest)`
-- `billingAddressToEqualUserAddressWhenBoxCheckedTest(Highest)`
-- `newAddressCheckBoxProvidesNewAddressFieldsTest(High)`
-- `checkOutWithValidAddressDetailsAndFieldsTest(Highest)*`
+- `phoneNumberMatchesUsersNumberTest (Priority: Highest)`
+- `billingAddressDropDownAllowsSelectDifferentAddressTest (Priority: Highest)`
+- `billingAddressToEqualUserAddressWhenBoxCheckedTest (Priority: Highest)`
+- `newAddressCheckBoxProvidesNewAddressFieldsTest (Priority: High)`
+- `checkOutWithValidAddressDetailsAndFieldsTest (Priority: Highest)*`
+- `checkOutWithLoggedInUserTest(Highest)`
+- `checkOutWithGuestAccountTest(Highest)`
+- `registerAccountThroughCheckoutPageAndCheckOutTest(Medium)`
+- `loginThroughCheckoutPageAndCheckOutTest(Medium)`
+- `yourPersonalDetailsFormTests(Highest)`
+  - `validFirstNameLowestBoundaryTest(Highest)`
+  - `validFirstNameHighestBoundaryTest(Highest)`
+  - `invalidFirstNameTest(Medium)`
+  - `validLastNameLowestBoundaryTest(Highest)`
+  - `validLastNameHighestBoundaryTest(Highest)`
+  - `invalidLastNameTest(Medium)`
+  - `validPhoneNumberLowestBoundaryTest(Highest)`
+  - `validPhoneNumberHighestBoundaryTest(Highest)`
+  - `invalidPhoneNumberTest(Medium)`
+  - `alphaNumericPhoneNumberTest(High)`
+  - `validPassword&ConfirmPasswordLowestBoundaryTest(Highest)`
+  - `validPassword&ConfirmPasswordHighestBoundaryTest(Highest)`
+  - `invalidLongPassword&ConfirmPasswordTest(Highest)`
+  - `password&ConfirmPasswordIsNotVisibleTest(Highest)`
+  - `wrongConfirmPasswordTypedTest(High)`
+- `billingAddressTests(Highest)`
+  - `validCompanyLowestBoundaryTest(Medium)`
+  - `validCompanyHighestBoundaryTest(Medium)`
+  - `invalidCompanyErrorMessageTest(Medium)`
+  - `validAddressLowestBoundaryTest(Highest)`
+  - `validAddressHighestBoundaryTest(Highest)`
+  - `invalidAddressErrorMessageTest(Highest)`
+  - `validCityLowestBoundaryTest(High)`
+  - `validCityHighestBoundaryTest(High)`
+  - `invalidCityErrorMessageTest(High)`
+  - `validPostCodeLowestBoundaryTest(High)`
+  - `validPostCodeHighestBoundaryTest(High)`
+  - `invalidPostCodeErrorMessageTest(Medium)`
+  - `countryDropDownDisplaysAllSupportedCountriesTest(High)`
+  - `regionStateDisplayedByCountryTest(High)`
+- `shippingAddressFormDisplayedWhenMyDeliverAndBillingAddressSameCheckBoxUncheckedTest(High)`
+- `cashOnDeliveryOptionTest(Highest)`
+- `flatShippingRateAppliedAsPerCountryTest(Highest)`
+- `imageProductNameQuantityUnitPriceTotalDisplayedCorrectlyTest(Highest)`
+- `quantityRefreshButtonTest(High)`
+- `checkingOutWithMultipleSameItemsTest(High)`
+- `checkingOutWithMultipleDifferentItemsTest(High)`
+- `unitAndTotalPriceUpdatedWhenQuantityUpdatedTest(Highest)`
+- `useCouponCodePlusButtonTest(Medium)`
+- `useCouponCodeValidCouponTest(Medium)`
+- `useCouponCodeInvalidCouponTest(Medium)`
+- `useCouponCodeMaxCharacterTest(Medium)`
+- `useGiftCertificateValidCouponTest(Medium)`
+- `useGiftCertificateInvalidCouponTest(Medium)`
+- `useGiftCertificateMaxCharacterTest(Medium)`
+- `useGiftCertificateWithCouponCodeTest(Medium)`
+- `flatShippingRateDisplaysCorrectWhenAppliedTest(Highest)`
+- `vatTaxCalculatedCorrectlyAsPerCountryTest(Highest)`
+- `addingValidCommentLowestBoundaryTest(Low)`
+- `addingValidCommentLowestBoundaryTest(Low)`
+- `addingInvalidCommentTest(Low)`
+- `proceedCheckOutWithoutAgreeTermsAndPrivacyPolicyTest(Highest)`
 
 ### Confirm Order Page
 

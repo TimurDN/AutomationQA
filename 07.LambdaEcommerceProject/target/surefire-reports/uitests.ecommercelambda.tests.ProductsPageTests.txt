@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: uitests.ecommercelambda.tests.ProductsPageTests
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 51.744 s - in uitests.ecommercelambda.tests.ProductsPageTests
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 42.386 s - in uitests.ecommercelambda.tests.ProductsPageTests
