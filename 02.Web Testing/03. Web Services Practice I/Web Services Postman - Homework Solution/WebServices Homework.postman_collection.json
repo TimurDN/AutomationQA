@@ -1,0 +1,823 @@
+{
+	"info": {
+		"_postman_id": "51ca330c-100e-4993-9d0a-13d129492cec",
+		"name": "WebServices Homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21724215",
+		"_collection_link": "https://planetary-desert-615880.postman.co/workspace/Exam_Checks~2b6e5250-fa08-46b0-bfce-4e1f56f30af0/collection/21724215-51ca330c-100e-4993-9d0a-13d129492cec?action=share&creator=21724215&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Get User via email (accountId)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData);\r",
+							"\r",
+							"pm.test(\"Validate emailAddress\", function () {\r",
+							"       pm.expect(jsonData[0].emailAddress).to.eql(pm.collectionVariables.get(\"email\"));\r",
+							"});\r",
+							"\r",
+							"console.log(jsonData[0].accountId);\r",
+							"pm.collectionVariables.set(\"accountId\", jsonData[0].accountId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/user/search?query={{email}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"user",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "{{email}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a story",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData.key);\r",
+							"pm.collectionVariables.set(\"storyKey\", jsonData.key);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n       \"project\":\r\n       {\r\n          \"key\": \"{{projectKey}}\"\r\n       },\r\n       \"summary\": \"{{storySummary}}\",\r\n       \"description\": \"{{storyDescriptionMultilines}}\",\r\n       \"issuetype\": {\r\n          \"name\": \"{{storyName}}\"\r\n       }\r\n   }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set an assignee by accountId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There is no response body\", function () {\r",
+							"    var res = (_.isEmpty(pm.response.body));\r",
+							"    pm.expect(res).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"assignee\": {\r\n            \"accountId\": \"{{accountId}}\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{storyKey}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{storyKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set an assignee by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There is no response body\", function () {\r",
+							"    var res = (_.isEmpty(pm.response.body));\r",
+							"    pm.expect(res).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"assignee\": {\r\n            \"id\": \"{{accountId}}\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{storyKey}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{storyKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set a priority",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There is no response body\", function () {\r",
+							"    var res = (_.isEmpty(pm.response.body));\r",
+							"    pm.expect(res).to.be.true;\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Response body is empty\", function () {\r",
+							"    pm.response.to.not.be.withBody;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"priority\": {\r\n            \"name\": \"{{storyPriority}}\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{storyKey}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{storyKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get transitions per story",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var response = pm.response.json();\r",
+							"console.log(response);\r",
+							"var bodyData = response.transitions;\r",
+							"console.log(bodyData);\r",
+							"console.log(bodyData.length);\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.response.to.be.withBody;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Transitions are more than 0\", function (){\r",
+							"    pm.expect(bodyData.length).to.be.greaterThan(0);\r",
+							"});\r",
+							"\r",
+							"bodyData.forEach(function(transition) {\r",
+							"    if(transition.name === \"In Progress\") {\r",
+							"        console.log(transition.id);\r",
+							"        pm.collectionVariables.set(\"inProgressTransitionId\", transition.id);\r",
+							"    } \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{storyKey}}/transitions",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{storyKey}}",
+						"transitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change transition",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There is no response body\", function () {\r",
+							"    var res = (_.isEmpty(pm.response.body));\r",
+							"    pm.expect(res).to.be.true\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transition\": {\r\n        \"id\": \"{{inProgressTransitionId}}\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{storyKey}}/transitions",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{storyKey}}",
+						"transitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a bug",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData.key);\r",
+							"pm.collectionVariables.set(\"bugKey\", jsonData.key);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"project\": {\r\n            \"key\": \"{{projectKey}}\"\r\n        },\r\n        \"summary\": \"{{bugSummary}}\",\r\n        \"description\": \"*Steps to reproduce:*\\n 1. Navigate to the main page - https://stage-forum.telerikacademy.com\\n *Expected result:* \\n The staging forum is loaded successfully \\n *Actual result:* \\n Staging forum is not available and return error: \\\"We can't connect to the server at \\\"stage-forum.telerikacademy.com.\\\" \\n *Severity:* Highest \\n *Prerequisites:* N/A \\n !https://upload.wikimedia.org/wikipedia/commons/f/f8/Science_2.0_model.png!\",\r\n        \"issuetype\": {\r\n            \"name\": \"{{bugName}}\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set an assignee by accountId",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There is no response body\", function () {\r",
+							"    var res = (_.isEmpty(pm.response.body));\r",
+							"    pm.expect(res).to.be.true\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"assignee\": {\r\n            \"accountId\": \"{{accountId}}\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{bugKey}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{bugKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set an assignee by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There is no response body\", function () {\r",
+							"    var res = (_.isEmpty(pm.response.body));\r",
+							"    pm.expect(res).to.be.true\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"assignee\": {\r\n            \"id\": \"{{accountId}}\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{bugKey}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{bugKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set a priority",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There is no response body\", function () {\r",
+							"    var res = (_.isEmpty(pm.response.body));\r",
+							"    pm.expect(res).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"priority\": {\r\n            \"name\": \"{{bugPriority}}\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{bugKey}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{bugKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set a severity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"There is no response body\", function () {\r",
+							"    var res = (_.isEmpty(pm.response.body));\r",
+							"    pm.expect(res).to.be.true;\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"customfield_10038\": {\r\n            \"id\": \"10020\",\r\n            \"value\": \"{{bugSeverity}}\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{bugKey}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{bugKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Link bug to story",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is empty\", function () {\r",
+							"    pm.response.to.not.be.withBody;\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"update\": {\r\n        \"issuelinks\": [\r\n            {\r\n                \"add\": {\r\n                    \"type\": {\r\n                        \"name\": \"Blocks\",\r\n                        \"inward\": \"is blocked by\",\r\n                        \"outward\": \"blocks\"\r\n                    },\r\n                    \"outwardIssue\": {\r\n                        \"key\": \"{{storyKey}}\"\r\n                    }\r\n                }\r\n            }\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{bugKey}}",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{bugKey}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add attachement",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check mimeType\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].mimeType).to.eql(\"image/png\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check filename\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].filename).to.eql(\"test_image.png\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Atlassian-Token",
+						"value": "no-check",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "test_image.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{bugKey}}/attachments",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{bugKey}}",
+						"attachments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add attachement 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check mimeType\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].mimeType).to.eql(\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check filename\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].filename).to.eql(\"TestDummySheet.xlsx\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Atlassian-Token",
+						"value": "no-check",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "TestDummySheet.xlsx"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}{{restAPI}}/issue/{{bugKey}}/attachments",
+					"host": [
+						"{{baseUrl}}{{restAPI}}"
+					],
+					"path": [
+						"issue",
+						"{{bugKey}}",
+						"attachments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "ATATT3xFfGF07_bfjb75-eFs0JH1XB0j6KwegWovilU7fCjG2rg0iqi4leF_R6O7t4FEDDc9ZMsPaxoRzSZknSRVw3pS4-s0eEiUrabp9ij0pbDkTsrIacnUbYd7n2DZ4GoBzYUcCHdkFOFOk9wYoR7WXTzRkQr1wy8RoxlqLmFywvQgeLkxfQ4=9E89A958",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{email}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "email",
+			"value": "diana.gospodinova@telerikacademy.com"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://xray-demo-project-a50.atlassian.net"
+		},
+		{
+			"key": "restAPI",
+			"value": "/rest/api/2"
+		},
+		{
+			"key": "accountId",
+			"value": ""
+		},
+		{
+			"key": "projectKey",
+			"value": "XD"
+		},
+		{
+			"key": "storySummary",
+			"value": "Create JIRA story homework"
+		},
+		{
+			"key": "storyDescriptionMultilines",
+			"value": "Use your free JIRA projects to practice testing Web Services\\n\\n *Task 1*\\n Create a story in JIRA via JIRA API and Postman\\n * Use Base Auth with using the JIRA API token\\n * Follow the best principles in creating a story\\n * Set priority based on the severity\\n\\n *Task 2*\\n Create a bug in JIRA via JIRA API and Postman \\n * Use Base Auth with using the JIRA API token\\n * Follow the best principles in creating a bug\\n * Set priority based on the severity\\n\\n *Task 3*\\n Link the bug to the story in JIRA via JIRA API and Postman\\n * Use Base Auth with using the JIRA API token\\n * Use relation 'is blocked by'\\n\\n *Hints and what don't forget to have:*\\n * Meaningful Title\\n * Test steps/Steps to reproduce\\n * Expected vs. Actual result\\n * Severity/Priority\\n * Prerequisites\\n * Additional info\\n * Classifications\\n * Others as screenshots, an assignee, transitions and everything useful"
+		},
+		{
+			"key": "storyName",
+			"value": "Story"
+		},
+		{
+			"key": "storyKey",
+			"value": ""
+		},
+		{
+			"key": "inProgressTransitionId",
+			"value": ""
+		},
+		{
+			"key": "storyPriority",
+			"value": "Medium"
+		},
+		{
+			"key": "bugSummary",
+			"value": "Staging forum is not available"
+		},
+		{
+			"key": "bugKey",
+			"value": ""
+		},
+		{
+			"key": "bugName",
+			"value": "Bug"
+		},
+		{
+			"key": "bugPriority",
+			"value": "Highest"
+		},
+		{
+			"key": "bugSeverity",
+			"value": "Highest"
+		}
+	]
+}
