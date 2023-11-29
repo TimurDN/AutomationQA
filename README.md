@@ -1,38 +1,57 @@
 # Repository Overview
 
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Testing Strategy](#testing-strategy)
+3. [Repository Structure and Links](#repository-structure-and-links)
+
+## Overview
+
 Welcome to the repository containing materials related to Java, Object-Oriented Programming (OOP) workshops, and various web testing projects. This repository is a compilation of practical exercises and projects aimed at enhancing your skills in Java programming, OOP principles, and web testing techniques.
 
 ## Repository Contents
 
 ### 01. Java OOP Workshops
 
-**Folder Structure Updates:**
-- This directory contains materials related to OOP workshops conducted in Telerik Academy. Explore the updated folder structure for the latest content and practice exercises which I did during the academy. These workshops were essential for my learning Java and OOP.
+**Description:**
+This directory contains materials related to OOP workshops conducted in Telerik Academy. Explore the updated folder structure for the latest content and practice exercises.
+
+---
 
 ### 02. Web Testing
 
-**Folder Structure Updates:**
-- Explore this section for a comprehensive set of materials covering various aspects of web testing:
-  - Postman API testing
-  - RestAssured API testing
-  - Selenium tests
-  - Homework assignments
-  - In-class activities
+**Description:**
+Explore this section for a comprehensive set of materials covering various aspects of web testing, including:
+- Postman API testing
+- RestAssured API testing
+- Selenium tests
+- Homework assignments
+- In-class activities
+
+---
 
 ### 03. POMFrameworkDesign1
 
-**Readme Updates:**
-- This folder focuses on a Page Object Model (POM) framework design. Check the README file for detailed information about the structure and implementation of the framework. See readme inside the file for more detailed explanation.
+**Description:**
+This folder focuses on a Page Object Model (POM) framework design. Check the README file for detailed information about the structure and implementation of the framework.
+- [POMFrameworkDesign1 Folder](link/to/POMFrameworkDesign1)
+
+---
 
 ### 04. POMFrameworkDesign2
 
-**Readme Updates:**
-- Similar to POMFrameworkDesign1, this folder emphasizes another approach to Page Object Model (POM) framework design. Refer to the README file for insights into the structure and usage of this framework. See readme inside the file for more detailed explanation.
+**Description:**
+Similar to POMFrameworkDesign1, this folder emphasizes another approach to Page Object Model (POM) framework design. Refer to the README file for insights into the structure and usage of this framework.
+- [POMFrameworkDesign2 Folder](link/to/POMFrameworkDesign2)
+
+---
 
 ### 05. MyProjects
 
-**Folder Structure Updated:**
-- This section encompasses various personal projects. Explore the updated folder structure for the latest content and project materials.
+**Description:**
+This section encompasses various personal projects. Explore the updated folder structure for the latest content and project materials.
+- [MyProjects Folder](link/to/MyProjects)
 
 ## Getting Started
 
@@ -41,5 +60,9 @@ To get started with a specific project or workshop, navigate to the respective f
 ## Contributing
 
 Feel free to contribute to this repository by forking the project and submitting pull requests. Whether it's fixing a bug, adding new features, or improving documentation, your contributions are valuable.
+
+## License
+
+This repository is open-source and available under the [MIT License](LICENSE). Feel free to explore, use, and modify the contents within the terms of the license.
 
 Happy coding!
