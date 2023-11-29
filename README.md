@@ -12,14 +12,14 @@ Welcome to the repository containing materials related to Java, Object-Oriented 
 
 ## Repository Contents
 
-### 01. [Java OOP Workshops](link/to/JavaOOPWorkshops)
+### 01. [Java OOP Workshops](01.JavaOOPWorkshops)
 
 **Description:**
 This directory contains materials related to OOP workshops conducted in Telerik Academy. Explore the updated folder structure for the latest content and practice exercises.
 
 ---
 
-### 02. [Web Testing](link/to/WebTesting)
+### 02. [Web Testing](02.WebTesting)
 
 **Description:**
 Explore this section for a comprehensive set of materials covering various aspects of web testing, including:
@@ -31,21 +31,21 @@ Explore this section for a comprehensive set of materials covering various aspec
 
 ---
 
-### 03. [POMFrameworkDesign1](link/to/POMFrameworkDesign1)
+### 03. [POMFrameworkDesign1](03.POMFrameworkDesign1)
 
 **Description:**
 This folder focuses on a Page Object Model (POM) framework design. Check the README file for detailed information about the structure and implementation of the framework.
 
 ---
 
-### 04. [POMFrameworkDesign2](link/to/POMFrameworkDesign2)
+### 04. [POMFrameworkDesign2](04.POMFrameworkDesign2)
 
 **Description:**
 Similar to POMFrameworkDesign1, this folder emphasizes another approach to Page Object Model (POM) framework design. Refer to the README file for insights into the structure and usage of this framework.
 
 ---
 
-### 05. [MyProjects](link/to/MyProjects)
+### 05. [MyProjects](05.MyProjects)
 
 **Description:**
 This section encompasses various personal projects. Explore the updated folder structure for the latest content and project materials.
