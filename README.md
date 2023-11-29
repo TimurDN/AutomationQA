@@ -7,7 +7,7 @@ Welcome to the repository containing materials related to Java, Object-Oriented 
 ### 01. Java OOP Workshops
 
 **Folder Structure Updates:**
-- This directory contains materials related to OOP workshops conducted in Telerik Academy. Explore the updated folder structure for the latest content and practice exercises.
+- This directory contains materials related to OOP workshops conducted in Telerik Academy. Explore the updated folder structure for the latest content and practice exercises which I did during the academy. These workshops were essential for my learning Java and OOP.
 
 ### 02. Web Testing
 
@@ -22,12 +22,12 @@ Welcome to the repository containing materials related to Java, Object-Oriented 
 ### 03. POMFrameworkDesign1
 
 **Readme Updates:**
-- This folder focuses on a Page Object Model (POM) framework design. Check the README file for detailed information about the structure and implementation of the framework.
+- This folder focuses on a Page Object Model (POM) framework design. Check the README file for detailed information about the structure and implementation of the framework. See readme inside the file for more detailed explanation.
 
 ### 04. POMFrameworkDesign2
 
 **Readme Updates:**
-- Similar to POMFrameworkDesign1, this folder emphasizes another approach to Page Object Model (POM) framework design. Refer to the README file for insights into the structure and usage of this framework.
+- Similar to POMFrameworkDesign1, this folder emphasizes another approach to Page Object Model (POM) framework design. Refer to the README file for insights into the structure and usage of this framework. See readme inside the file for more detailed explanation.
 
 ### 05. MyProjects
 
@@ -41,9 +41,5 @@ To get started with a specific project or workshop, navigate to the respective f
 ## Contributing
 
 Feel free to contribute to this repository by forking the project and submitting pull requests. Whether it's fixing a bug, adding new features, or improving documentation, your contributions are valuable.
-
-## License
-
-This repository is open-source and available under the [MIT License](LICENSE). Feel free to explore, use, and modify the contents within the terms of the license.
 
 Happy coding!
