@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 public class BaseTestAmazon {
 
     //PAGES
-    public static HomePageAmazon homePageLambda;
+    public static HomePageAmazon homePageAmazon;
     public static ShoppingCartPageAmazon shoppingCartPageLambda;
 
     @BeforeEach
@@ -19,7 +19,7 @@ public class BaseTestAmazon {
         UserActions.loadBrowser("amazon.homepage");
         WebDriver driver = CustomWebDriverManager.CustomWebDriverManagerEnum.INSTANCE.getDriver();
 
-        homePageLambda = new HomePageAmazon(driver);
+        homePageAmazon = new HomePageAmazon(driver);
 
     }
 
