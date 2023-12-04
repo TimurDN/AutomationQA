@@ -13,4 +13,11 @@ public class HomePageAmazon extends BasePageAmazon {
         homePageElements().homeSearchBar().click();
     }
 
+    public void searchProductByName(String name){
+        homePageElements().homeSearchBar().click();
+        homePageElements().homeSearchBar().sendKeys(name);
+        homePageElements().homeSearchSubmit().click();
+
+    }
+
 }

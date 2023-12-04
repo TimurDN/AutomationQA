@@ -20,6 +20,11 @@ public class HomePageElements extends BasePageAmazon {
         return driver.findElement(By.id("twotabsearchtextbox"));
     }
 
+    public WebElement homeSearchSubmit() {
+        actions.waitForElementClickable("//input[@id='nav-search-submit-button']");
+        return driver.findElement(By.id("nav-search-submit-button"));
+    }
+
     public WebElement homeSearchBarAjax() {
         actions.waitForElementClickable("//div[@id='nav-flyout-searchAjax']");
         return driver.findElement(By.id("nav-flyout-searchAjax"));
