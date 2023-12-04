@@ -16,7 +16,7 @@ public class HomePageElements extends BasePageAmazon {
     }
 
     public WebElement homeSearchBar() {
-        actions.waitForElementClickable("(//input[@type='text'][@placeholder='Search For Products'])[1]");
+        actions.waitForElementClickable("//input[@id='twotabsearchtextbox']");
         return driver.findElement(By.id("twotabsearchtextbox"));
     }
 

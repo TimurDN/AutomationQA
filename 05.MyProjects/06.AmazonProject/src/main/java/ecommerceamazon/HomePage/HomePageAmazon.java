@@ -9,7 +9,8 @@ public class HomePageAmazon extends BasePageAmazon {
     public HomePageAmazon(WebDriver driver) {
         super(driver, "amazon.homepage");
     }
-
-
+    public void clickOnEmptySearchbar(){
+        homePageElements().homeSearchBar().click();
+    }
 
 }
