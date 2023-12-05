@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/timda/OneDrive/Desktop/Uploads/AutomationQA/05.MyProjects/06.AmazonProject/src/test/java/apitests">
+        <classes>
+            <class name="apitests.PostControllerTest">
+                <methods>
+                    <include name="getAllPostsTest"/>
+                    <include name="getAllPostsOfUserId5Test"/>
+                    <include name="getAllPostsOfUserId7Test"/>
+                    <include name="getAllPostsOfUserId9Test"/>
+                    <include name="uniquePostIdPerPostTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
