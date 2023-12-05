@@ -11,7 +11,16 @@ public class SearchResultTests extends BaseTestAmazon {
         homePageAmazon.searchProductByName("Laptop");
 
         searchResultPageAmazon.searchResultPageAssertions().assertSearchSubmission("Laptop");
-        //searchResultPageAmazon.searchResultPageAssertions().assertSearchedProductByNameHasResults("Laptop");
+        searchResultPageAmazon.searchResultPageAssertions().assertSearchedProductByNameHasResults("Laptop");
+    }
+
+    @Test
+    public void addNonDiscountedProductsInStockToShoppingCart() throws InterruptedException {
+        homePageAmazon.navigateToPage();
+        homePageAmazon.searchProductByName("Laptop");
+
+        productPageAmazon.addNonDiscountedProductsToCart();
+
     }
 
 }
