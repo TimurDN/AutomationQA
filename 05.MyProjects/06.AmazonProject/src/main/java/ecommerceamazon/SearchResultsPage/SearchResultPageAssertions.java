@@ -10,7 +10,9 @@ public class SearchResultPageAssertions extends BasePageAmazon {
     }
 
     public void assertSearchSubmission(String name) {
-        Assertions.assertTrue(driver.getTitle().contains(String.format("%s", name)), "Title does not contain the expected name: " + name);
+        String actualTitle = driver.getTitle();
+        Assertions.assertTrue(actualTitle.contains(name),
+                "Title does not contain the expected name: " + name);
     }
 
     public void assertSearchedProductByNameHasResults(String productName) {
