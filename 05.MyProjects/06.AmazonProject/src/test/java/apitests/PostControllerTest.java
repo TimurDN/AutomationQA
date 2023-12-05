@@ -96,6 +96,13 @@ public class PostControllerTest extends BaseTestSetup {
         for (Integer postId : postIds) {
             assertTrue(uniquePostIds.add(postId), "Duplicate post ID found in the response: " + postId);
         }
+
+        // Print all unique IDs
+        System.out.println("Unique Post IDs:");
+        for (Integer uniqueId : uniquePostIds) {
+            System.out.println(uniqueId);
+        }
+
             // Compare the size of the list and the set to identify duplicates
             assertEquals(postIds.size(), uniquePostIds.size(), "Duplicate post IDs found in the response.");
         }

@@ -1,7 +1,5 @@
 package apitests;
 
-import com.github.javafaker.service.FakeValuesService;
-import com.github.javafaker.service.RandomService;
 import io.restassured.RestAssured;
 import io.restassured.config.EncoderConfig;
 import io.restassured.response.Response;
