@@ -3,6 +3,7 @@ package uitests.ecommerceamazon.base;
 import com.telerikacademy.testframework.CustomWebDriverManager;
 import com.telerikacademy.testframework.UserActions;
 import ecommerceamazon.HomePage.HomePageAmazon;
+import ecommerceamazon.SearchResultPage.SearchResultPageAmazon;
 import ecommerceamazon.ShoppingCartPage.ShoppingCartPageAmazon;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +13,7 @@ public class BaseTestAmazon {
 
     //PAGES
     public static HomePageAmazon homePageAmazon;
+    public static SearchResultPageAmazon searchResultPageAmazon;
     public static ShoppingCartPageAmazon shoppingCartPageLambda;
 
     @BeforeEach
@@ -20,6 +22,7 @@ public class BaseTestAmazon {
         WebDriver driver = CustomWebDriverManager.CustomWebDriverManagerEnum.INSTANCE.getDriver();
 
         homePageAmazon = new HomePageAmazon(driver);
+        searchResultPageAmazon = new SearchResultPageAmazon(driver);
 
     }
 
