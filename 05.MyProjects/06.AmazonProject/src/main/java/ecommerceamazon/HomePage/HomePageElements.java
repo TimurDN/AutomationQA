@@ -25,6 +25,11 @@ public class HomePageElements extends BasePageAmazon {
         return driver.findElement(By.id("nav-flyout-searchAjax"));
     }
 
+    public WebElement homeSearchSubmitButton(){
+        actions.waitForElementClickable("//input[@id='nav-search-submit-button']");
+        return driver.findElement(By.id("nav-search-submit-button"));
+    }
+
     public WebElement homeAmazonLogo() {
         actions.waitForElementClickable("//a[@id='nav-logo-sprites']");
         return driver.findElement(By.id("nav-logo-sprites"));
