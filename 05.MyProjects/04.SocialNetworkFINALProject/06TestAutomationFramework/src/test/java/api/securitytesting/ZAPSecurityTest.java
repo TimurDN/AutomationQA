@@ -39,8 +39,8 @@ public class ZAPSecurityTest {
 
     @Test
     public void weAreSecurityTest() {
-        driver.get("http://localhost:8081/");
-        Assert.assertTrue(driver.getTitle().contains("WE are social media"));
+        driver.get("https://www.google.com/");
+        Assert.assertTrue(driver.getTitle().contains("Google"));
 
     }
 
@@ -63,7 +63,7 @@ public class ZAPSecurityTest {
                 e.printStackTrace();
             }
         }
-        driver.quit();
+        //driver.quit();
     }
 
 }
