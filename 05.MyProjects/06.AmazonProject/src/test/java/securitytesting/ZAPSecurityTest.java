@@ -1,4 +1,4 @@
-package api.securitytesting;
+package securitytesting;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.Proxy;
