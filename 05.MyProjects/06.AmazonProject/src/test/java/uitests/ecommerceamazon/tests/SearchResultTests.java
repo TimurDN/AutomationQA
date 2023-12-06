@@ -23,4 +23,13 @@ public class SearchResultTests extends BaseTestAmazon {
 
     }
 
+    @Test
+    public void addNonDiscountedProductsInStockToShoppingCart2() throws InterruptedException {
+        homePageAmazon.navigateToPage();
+        homePageAmazon.searchProductByName("Laptop");
+
+        productPageAmazon.addNonDiscountedProductsToCartAndCheckCart();
+
+    }
+
 }
