@@ -24,4 +24,14 @@ public class ProductPageElements extends BasePageAmazon {
         actions.waitTillElementIsVisible("//span[@id='nav-cart-count']");
         return driver.findElement(By.id("nav-cart-count"));
     }
+
+    public WebElement goToCartButton(){
+        actions.waitForElementClickable("//a[normalize-space()='Go to Cart']");
+        return driver.findElement(By.xpath("//a[normalize-space()='Go to Cart']"));
+    }
+
+    public WebElement shoppingCartHeader(){
+        actions.waitTillElementIsVisible("//h1[normalize-space()='Shopping Cart']");
+        return driver.findElement(By.xpath("//h1[normalize-space()='Shopping Cart']"));
+    }
 }

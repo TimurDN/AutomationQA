@@ -31,7 +31,7 @@ public class ProductPageAmazon extends BasePageAmazon {
             nonDiscountedProducts = searchResultPageAmazon().findNonDiscountedProductElement();
             webElementList = nonDiscountedProducts.entrySet().stream().map(e -> e.getValue()).collect(Collectors.toList());
             titleList = nonDiscountedProducts.entrySet().stream().map(e -> e.getKey()).collect(Collectors.toList());
-            addNonDiscountedProductsToCartByProduct(webElementList.get(i), titleList.get(i));
+            addNonDiscountedProductsToCartByOnlyProductName(webElementList.get(i), titleList.get(i));
 
             driver.navigate().back();
             Thread.sleep(1000);
@@ -40,7 +40,7 @@ public class ProductPageAmazon extends BasePageAmazon {
 
     }
 
-    public void addNonDiscountedProductsToCartAndCheckCart() throws InterruptedException {
+    public void addNonDiscountedProductsToCart2() throws InterruptedException {
 
         Map<String, WebElement> nonDiscountedProducts = searchResultPageAmazon().findNonDiscountedProductElement();
         Iterator<Map.Entry<String, WebElement>> iterator = nonDiscountedProducts.entrySet().iterator();
@@ -52,22 +52,17 @@ public class ProductPageAmazon extends BasePageAmazon {
             nonDiscountedProducts = searchResultPageAmazon().findNonDiscountedProductElement();
             webElementList = nonDiscountedProducts.entrySet().stream().map(e -> e.getValue()).collect(Collectors.toList());
             titleList = nonDiscountedProducts.entrySet().stream().map(e -> e.getKey()).collect(Collectors.toList());
-            addNonDiscountedProductsToCartByProduct(webElementList.get(i), titleList.get(i));
+            addNonDiscountedProductsToCartByOnlyProductName(webElementList.get(i), titleList.get(i));
 
             driver.navigate().back();
             Thread.sleep(1000);
             driver.navigate().back();
         }
 
-        //karta git
-        //kart sayfasındaki tüm elemanların titlelarını listeye ata
-        //elindeki title list ile atadığın title listi karşılaştır.
-
     }
 
-    private void addNonDiscountedProductsToCartByProduct(WebElement next, String key) {
+    private void addNonDiscountedProductsToCartByOnlyProductName(WebElement next, String key) {
         next.click();
-
         if (key.contains("\n")) {
             key = key.split("\n")[1];
 
@@ -76,7 +71,10 @@ public class ProductPageAmazon extends BasePageAmazon {
         productPageElements().addToCartButton().click();
         productPageAssertions().assertProductAddedToCart();
 
+    }
 
+    public void navigateToShoppingCart(){
+        productPageElements().goToCartButton().click();
     }
 
 }

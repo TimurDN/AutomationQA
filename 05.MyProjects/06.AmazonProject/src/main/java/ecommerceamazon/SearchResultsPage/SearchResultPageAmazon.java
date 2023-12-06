@@ -14,6 +14,7 @@ public class SearchResultPageAmazon extends BasePageAmazon {
     }
 
     public Map<String, WebElement> findNonDiscountedProductElement() {
+
         List<WebElement> productElement = driver.findElements(By.xpath("//span[@class='a-price']/../../a"));
         List<WebElement> productTitleElement = driver.findElements(By.xpath("//div[@data-cy='title-recipe']"));
         Map<String, WebElement> nonDiscountedProductAndTitleMap = new HashMap<>();

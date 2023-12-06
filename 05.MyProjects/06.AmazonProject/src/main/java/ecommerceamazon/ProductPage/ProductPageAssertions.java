@@ -19,4 +19,8 @@ public class ProductPageAssertions extends BasePageAmazon {
         int count = Integer.parseInt(productPageElements().shoppingCartAddedProductCount().getText());
         Assertions.assertTrue(count > 0, "Expected count should be greater than 0.");
     }
+
+    public void assertShoppingCartDisplayed(){
+        actions.assertElementPresentUsingWebElement(productPageElements().shoppingCartHeader());
+    }
 }
