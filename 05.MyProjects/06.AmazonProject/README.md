@@ -2,7 +2,10 @@
 
 **Note:** Java 11 is used for development, TestNG is used for testing, and an XML file is provided for test execution. 
 
+Best practices for RestAssured and Java have been implemented.
+
 Additionally, a Postman version of this API test is available and will be added to GitHub.
+
 
 ## Scenario 1: Counting Posts for User <user>
 
