@@ -4,6 +4,8 @@ import ecommerceamazon.BasePage.BasePageAmazon;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 
+import java.util.List;
+
 public class ProductPageAssertions extends BasePageAmazon {
     public ProductPageAssertions(WebDriver driver) {
         super(driver, "amazon.homepage");
@@ -11,7 +13,7 @@ public class ProductPageAssertions extends BasePageAmazon {
 
     public void assertProductTitleToAddToCart(String title) {
 
-        Assertions.assertEquals(title, productPageElements().productTitleInProductPage().getText(),
+        Assertions.assertTrue(productPageElements().productTitleInProductPage().getText().contains(title),
                 "Title does not contain the expected name: " + title);
     }
 
@@ -22,5 +24,10 @@ public class ProductPageAssertions extends BasePageAmazon {
 
     public void assertShoppingCartDisplayed(){
         actions.assertElementPresentUsingWebElement(productPageElements().shoppingCartHeader());
+    }
+
+    public void assertShoppingCartProductTitles(List<String> nonMatchedTitle){
+        Assertions.assertTrue(nonMatchedTitle.isEmpty());
+
     }
 }

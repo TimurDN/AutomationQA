@@ -4,9 +4,7 @@ import ecommerceamazon.BasePage.BasePageAmazon;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ProductPageAmazon extends BasePageAmazon {
@@ -40,7 +38,7 @@ public class ProductPageAmazon extends BasePageAmazon {
 
     }
 
-    public void addNonDiscountedProductsToCart2() throws InterruptedException {
+    public List<String> proceedCheckOut() throws InterruptedException {
 
         Map<String, WebElement> nonDiscountedProducts = searchResultPageAmazon().findNonDiscountedProductElement();
         Iterator<Map.Entry<String, WebElement>> iterator = nonDiscountedProducts.entrySet().iterator();
@@ -58,7 +56,37 @@ public class ProductPageAmazon extends BasePageAmazon {
             Thread.sleep(1000);
             driver.navigate().back();
         }
+        navigateToShoppingCart();
+        List<String> cartTitleList = productPageElements().cartProductTitles();
+        titleList = titleList.stream().map(title -> title.split("\n").length > 1 ? title.split("\n")[1] : title.split("\n")[0]).collect(Collectors.toList());
+        titleList = removeDuplicateItemInList(titleList);
+        //List<String> nonMatchingTitles = findNonMatchingTitles(cartTitleList, titleList);
 
+        List<Boolean> flagList = new ArrayList<>();
+
+        for (int i = 0; i < cartTitleList.size(); i++) {
+          boolean flag =  findDifferenceBetweenTwoLists(cartTitleList.get(i),titleList);
+          flagList.add(flag);
+
+        }
+        return cartTitleList;
+    }
+
+    private List<String> findNonMatchingTitles(List<String> cartTitleList, List<String> titleList) {
+        return cartTitleList.stream()
+                .filter(title -> !titleList.contains(title))
+                .collect(Collectors.toList());
+    }
+
+    public boolean findDifferenceBetweenTwoLists(String item, List<String> comparableList) {
+        return comparableList.stream().filter(c -> c.contains(item)).findAny().isEmpty();
+
+    }
+
+    public List<String> removeDuplicateItemInList(List<String> items) {
+        Set<String> set = new HashSet<>(items.size());
+        items.removeIf(p -> !set.add(p));
+        return items;
     }
 
     private void addNonDiscountedProductsToCartByOnlyProductName(WebElement next, String key) {
@@ -73,7 +101,7 @@ public class ProductPageAmazon extends BasePageAmazon {
 
     }
 
-    public void navigateToShoppingCart(){
+    public void navigateToShoppingCart() {
         productPageElements().goToCartButton().click();
     }
 

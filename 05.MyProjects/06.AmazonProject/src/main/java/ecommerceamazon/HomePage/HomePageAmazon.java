@@ -17,6 +17,11 @@ public class HomePageAmazon extends BasePageAmazon {
         homePageElements().homeSearchBar().click();
         homePageElements().homeSearchBar().sendKeys(productName);
         homePageElements().homeSearchSubmitButton().click();
+
+    }
+
+    public void refreshPage(){
+        driver.navigate().refresh();
     }
 
 }
