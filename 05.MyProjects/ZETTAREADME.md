@@ -14,7 +14,7 @@ This folder houses the Amazon Project tasks, including Task1, Task2, Task3, and 
    - Detailed instructions and information for Task1 can be found in the dedicated branch.
 
 2. **Task2:** [Task2 Branch](https://github.com/TimurDN/AutomationQA/tree/Task2New)
-   - Explore the specific branch for Task2 to access detailed instructions and relevant information.
+   - Explore the specific task branch for Task2 to access detailed instructions and relevant information.
 
 3. **Task3:** [Task3 Branch](https://github.com/TimurDN/AutomationQA/tree/Task3)
    - For Task3, switch to the corresponding branch to find comprehensive instructions and details.
