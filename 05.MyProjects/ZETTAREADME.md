@@ -1,65 +1,54 @@
-# Repository Overview
-
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Testing Strategy](#testing-strategy)
-3. [Repository Structure and Links](#repository-structure-and-links)
+# ZETTA Tasks - README
 
 ## Overview
 
-Welcome to the repository containing materials related to Java, Object-Oriented Programming (OOP) workshops, and various web testing projects. This repository is a compilation of practical exercises and projects aimed at enhancing your skills in Java programming, OOP principles, and web testing techniques.
+This repository includes tasks related to ZETTA, organized under the folder structure starting with "06." Each subfolder corresponds to a specific task or project, and the instructions below provide details for accessing and understanding each task.
 
-## Repository Contents
+## Project Structure
 
-### 01. [Java OOP Workshops](01.JavaOOPWorkshops)
+### 06.AmazonProject
 
-**Description:**
-This directory contains materials related to OOP workshops conducted in Telerik Academy. Explore the updated folder structure for the latest content and practice exercises.
+This folder houses the Amazon Project tasks, including Task1, Task2, Task3, and an additional task named SecurityTesting. These tasks are organized in different branches as per the specified requirements.
 
----
+1. **Task1:** [Task1 Branch](https://github.com/TimurDN/AutomationQA/tree/Task1)
+   - Detailed instructions and information for Task1 can be found in the dedicated branch.
 
-### 02. [Web Testing](02.WebTesting)
+2. **Task2:** [Task2 Branch](https://github.com/TimurDN/AutomationQA/tree/Task2New)
+   - Explore the specific branch for Task2 to access detailed instructions and relevant information.
 
-**Description:**
-Explore this section for a comprehensive set of materials covering various aspects of web testing, including:
-- Postman API testing
-- RestAssured API testing
-- Selenium tests
-- Homework assignments
-- In-class activities
+3. **Task3:** [Task3 Branch](https://github.com/TimurDN/AutomationQA/tree/Task3)
+   - For Task3, switch to the corresponding branch to find comprehensive instructions and details.
 
----
+4. **SecurityTesting:** [SecurityTesting Branch](#)
+   - Additional task focused on Security Testing. Switch to the SecurityTesting branch for specific instructions.
 
-### 03. [POMFrameworkDesign1](03.POMFrameworkDesign1)
+**Note:** Open the project with IntelliJ IDEA and navigate through branches to view different tasks.
 
-**Description:**
-This folder focuses on a Page Object Model (POM) framework design. Check the README file for detailed information about the structure and implementation of the framework.
+### 06.PostmanAPITask3&Report
 
----
+This folder contains Task 3 API testing scenarios for Postman, along with a bat run script that generates a Newman extra HTML report. Additionally, you can find the RestAssured version of the API tests in the Task 3 branch within the 06.AmazonProject.
 
-### 04. [POMFrameworkDesign2](04.POMFrameworkDesign2)
+1. **Task 3 API Testing:**
+   - Open the folder and explore the Postman collection for Task 3 API testing scenarios.
 
-**Description:**
-Similar to POMFrameworkDesign1, this folder emphasizes another approach to Page Object Model (POM) framework design. Refer to the README file for insights into the structure and usage of this framework.
+2. **Newman HTML Report:**
+   - Execute the provided bat run script to generate a detailed Newman HTML report for the API tests.
 
----
+3. **RestAssured Version:**
+   - Check the Task 3 branch in the 06.AmazonProject for the RestAssured version of the API tests.
 
-### 05. [MyProjects](05.MyProjects)
+### Main Branch
 
-**Description:**
-This section encompasses various personal projects. Explore the updated folder structure for the latest content and project materials.
+The `main` branch contains the main skeleton that has been used as the foundation for all the tasks in this repository.
 
-## Getting Started
+## IDE Used
 
-To get started with a specific project or workshop, navigate to the respective folder, and refer to the README files for detailed instructions, project goals, and any additional information.
+This project was developed using **IntelliJ IDEA**. Make sure you have IntelliJ IDEA installed to seamlessly open and work with the project and build with JDK 11.
 
-## Contributing
+## Important Note
 
-Feel free to contribute to this repository by forking the project and submitting pull requests. Whether it's fixing a bug, adding new features, or improving documentation, your contributions are valuable.
+Switch between branches to access detailed README instructions for each task. For Task 3, refer to both the Postman and RestAssured versions to gain a comprehensive understanding.
 
-## License
-
-This repository is open-source and available under the [MIT License](LICENSE). Feel free to explore, use, and modify the contents within the terms of the license.
+Feel free to reach out if you have any questions or need further clarification.
 
 Happy coding!
