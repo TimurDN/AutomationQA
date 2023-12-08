@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class HomePageElements extends BasePageAmazon {
     public HomePageElements(WebDriver driver) {
         super(driver, "amazon.homepage");
@@ -58,6 +60,30 @@ public class HomePageElements extends BasePageAmazon {
     public WebElement homeShoppingCartButton(){
         actions.waitForElementClickable("//a[@id='nav-cart']");
         return driver.findElement(By.id("nav-cart"));
+    }
+
+    public WebElement hamburgerMenuButton(){
+        actions.waitForElementClickable("//a[@id='nav-hamburger-menu']");
+        return driver.findElement(By.id("nav-hamburger-menu"));
+    }
+
+    public WebElement seeAllButtonInHamburgerMenu(){
+        actions.waitForElementClickable(
+                "//body/div[@id='hmenu-container']/div[@id='hmenu-canvas']" +
+                        "/div[@id='hmenu-content']/ul[1]/li[11]/a[1]");
+        return driver.findElement(By.xpath(
+                "//body/div[@id='hmenu-container']/div[@id='hmenu-canvas']" +
+                        "/div[@id='hmenu-content']/ul[1]/li[11]/a[1]"));
+    }
+
+    public List<WebElement> getShopByDepartment(){
+        return driver.findElements(By.xpath(
+                "//a[@class='hmenu-item' and @data-menu-id >= 5 and @data-menu-id <= 26]"));
+    }
+
+    public WebElement hamburgerMenuCloseButton(){
+        actions.waitForElementClickable("//div[@class='nav-sprite hmenu-close-icon']");
+        return driver.findElement(By.xpath("//div[@class='nav-sprite hmenu-close-icon']"));
     }
 
 }
