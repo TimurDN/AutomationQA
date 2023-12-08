@@ -1,207 +1,48 @@
-# High-level Test Case Automation Strategy
+# Selenium WebDriver Automated Tests - README
 
-**Note:**
-- Test cases marked with (*) are to be automated for the interview.
+## Introduction
 
-## Priority Summary
+This README provides comprehensive insights into the implementation of acceptance criteria using Java and Selenium WebDriver, specifically designed for the Chrome browser. The project leverages IntelliJ as the IDE, JDK 11, and adheres to industry best practices such as JUnit 5 for testing, Object-Oriented Principles (OOP), and the Page Object Model (POM). The framework is meticulously crafted to ensure code maintainability and reusability.
 
-- **Highest Priority Test Cases:** 86
-  - Creating Strategy & Automated Tests*: 17 (completed in 5 days(2 days planning, 3 days automating))
-  - (See surefire report in target/site)
-  - Pending for manual and automation: 69
+## Acceptance Criteria
 
-- **High Priority Test Cases:** 27
-  - Pending for Manual & Automation: 27
+### Test Workflow
 
-- **Medium&Low Priority Test Cases:** 48 / 16
-  - Pending Manual: 64
+1. **Amazon Homepage Navigation:**
+  - Open the Chrome browser and navigate to [amazon.com](https://www.amazon.com/).
+  - Validate the integrity of the homepage.
 
-## Estimated Timeline
+2. **Laptop Search:**
+  - Execute a search using the keyword "laptop."
 
-- **Estimated remaining time for completion of all tasks:** 14-16 business days
+3. **Cart Population:**
+  - Add non-discounted, in-stock products from the first page of search results to the shopping cart.
 
-## Test Case Overview
+4. **Cart Verification:**
+  - Go to the cart and meticulously verify the correctness of the added products.
 
-## Total Cases: 177
+### Framework Highlights
 
-------
+#### Technology Stack
 
-### HomePage
+- **IDE:** IntelliJ
+- **JDK:** 11
+- **Selenium WebDriver:** Chrome browser (Supports multiple browsers)
+- **Testing Framework:** JUnit 5
 
-#### General Tests
-- `homePageNavigatedTest(Highest)*`
-- `imagesInHomePageVisibleTest(Highest)`
-- `scrollBarFunctionalityToSpecificElementTest(Highest)`
+#### Key Features
 
-#### Search Bar Functionalities
-- `searchExistingProductTest(Highest)*`
-- `productSuggestionDisplaysWhenLetterTypedTest(Medium)`
-- `searchWithCategoryAndProductTest(Highest)`
-- `allTypesDisplayedWhenAllCategorySelectedTest(High)`
-- `selectedCategoryFromSearchDisplaysRespectiveItemsTest(Highest)`
+- **Flexibility and Configurability:**
+  - The framework accommodates various browsers, easily configurable through properties.
 
-#### HomePage Buttons Visibilities & Functionalities (Manually to be tested)
-- `Shop By Category button(Medium)`
-- `Home button(Medium)`
-- `Special button(Medium)`
-- `Blog button(Medium)`
-- `Mega Menu button(High)`
-- `AddOns button(High)`
-- `My Account button(High)`
-    - `Login button(Highest)(Automated)`
-        - `loginFormDisplayedWhenLoginButtonClicked(Highest)`
-    - `Register button(Highest)(Automated)`
-        - `registerFormDisplayedWhenRegisterButtonClicked(Highest)`
-- `Compare(Medium)`
-- `Wishlist(Medium)`
-    - `Wishlist number increases when product added(Medium)`
-    - `Wishlist number decreases when product removed(Medium)`
-- `Cart(Medium)`
-    - `Cart number increases when product added(Medium)`
-    - `Cart number decreases when product removed(Medium)`
+- **Modular Code Structure:**
+  - Implements the Page Object Model (POM) for a modular code structure.
+  - Distinct classes for assertions, elements, and page objects ensure code maintainability and reusability.
 
-### Register Page
+### Running the Tests
 
-- `registerFormAccessTest(Highest)*`
-- `registerAccountWithMandatoryFieldsTest(Highest)*`
-- `registerAccountWithAllFieldsWithNewsletterNoTest(Highest)`
-- `errorMessagesForFieldsTest(Highest)*`
-- `registerUserWithExistingEmailTest(Highest)*`
-- `registerUserWithAlphaNumericPhoneNumberTest(Medium)`
-- `registerUserWithoutClickingOnAgreePrivacyPolicyButtonTest(Highest)`
-
-### Login Page
-
-- `loginFormAccessTest(Highest)*`
-- `loginWithValidCredentialsTest(Highest)*`
-- `loginWithInvalidCredentialsTest(Highest)*`
-    - `loginWithIncorrectPasswordTest(Highest)`
-    - `loginWithInvalidUsernameAndValidPasswordTest(Highest)`
-    - `loginWithInvalidUsernameAndPasswordTest(Highest)`
-- `forgotPasswordLinkTest(Medium)`
-- `loginWithEmptyFieldsTest(High)`
-- `loginWithChangedPasswordTest(High)`
-
-### Products Page
-
-- `productsHavePriceAndNameTest(Highest)(asserted in homepage search test)`
-- `sortByNameA-ZFunctionalityTest(Medium)`
-- `sortByPriceLow-HighFunctionalityTest(High)`
-- `addToCartButtonAddsProductToCartTest(Highest)*`
-- `purchaseProductWithoutAddingToCartTest(Highest)`
-- `wishListButtonAddsProductToWishListTest(Highest)*`
-- `quickViewButtonShowsMoreDetailsTest(High)`
-- `compareTwoProductsComparesSelectedProductsCorrectlyTest(Highest)*`
-- `showNextPhotosOfProductTest(High)`
-- `availabilityStatusIsDisplayedTest(Highest)`
-- `defaultQuantityOfProductTest(Highest)`
-
-### ShoppingCart Page
-
-- `addItemToTheShoppingCartTest(Highest)*`
-- `removeItemFromShoppingCardTest(Highest)*`
-- `userCanAccessCheckOutPageFromShoppingCartTest(Highest)*`
-- `updateShoppingCartProductQuantityTest(Medium)`
-  - `updateShoppingCartWith0ProductsTest(Medium)`
-  - `updateShoppingCartWith9999ProductsTest(Medium)`
-- `imageNameModelQuantityUnitPriceTotalTest(Highest)`
-- `homePageNavigationAfterClickContinueShoppingButtonTest(Medium)`
-- `confirmVatTaxForEuCountryTest(Highest)`
-- `flatShippingRateRecalculatedBasedOnSizeTest(Highest)`
-- `termsAndConditionsCheckButtonTest(Highest)`
-- `refreshButtonTest(High)`
-- `shoppingCartPageMaxCartItemTest(Medium)`
-- `useCouponCodePlusButtonTest(Medium)`
-- `useCouponCodeValidCouponTest(Medium)`
-- `useCouponCodeInvalidCouponTest(Medium)`
-- `useCouponCodeMaxCharacterTest(Medium)`
-- `useGiftCertificateValidCouponTest(Medium)`
-- `useGiftCertificateInvalidCouponTest(Medium)`
-- `useGiftCertificateMaxCharacterTest(Medium)`
-- `useGiftCertificateWithCouponCodeTest(Medium)`
-- `countryDropDownShowsSupportedCountriesTest(Highest)`
-- `regionStateDisplaysByCountryTest(High)`
-- `getQuotesRequiresFillingRequiredFieldsTest(Highest)`
-- `postCodeLowerBoundaryTest(Highest)`
-- `postCodeHigherBoundaryTest(Highest)`
-- `postCodeInvalidCharsTest(Medium)`
-- `getQuotesPopUpTitleTest(Highest)`
-- `flatRateCalculationTest(Highest)`
-- `cancelFlatRateDoesNotApplyTaxTest(Highest)`
-- `applyShippingTaxWhenApplyButtonClickedTest(Highest)`
-- `displayedFlatShippingRateAmountAddedToSubTotalTest(Highest)`
-- `successMessageAfterAddingFlatShippingRateTest(Medium)`
-- `continueShoppingButtonTest(Medium)`
-
-### CheckOut Page
-
-- `phoneNumberMatchesUsersNumberTest (Priority: Highest)`
-- `billingAddressDropDownAllowsSelectDifferentAddressTest (Priority: Highest)`
-- `billingAddressToEqualUserAddressWhenBoxCheckedTest (Priority: Highest)`
-- `newAddressCheckBoxProvidesNewAddressFieldsTest (Priority: High)`
-- `checkOutWithValidAddressDetailsAndFieldsTest (Priority: Highest)*`
-- `checkOutWithLoggedInUserTest(Highest)`
-- `checkOutWithGuestAccountTest(Highest)`
-- `registerAccountThroughCheckoutPageAndCheckOutTest(Medium)`
-- `loginThroughCheckoutPageAndCheckOutTest(Medium)`
-- `yourPersonalDetailsFormTests(Highest)`
-  - `validFirstNameLowestBoundaryTest(Highest)`
-  - `validFirstNameHighestBoundaryTest(Highest)`
-  - `invalidFirstNameTest(Medium)`
-  - `validLastNameLowestBoundaryTest(Highest)`
-  - `validLastNameHighestBoundaryTest(Highest)`
-  - `invalidLastNameTest(Medium)`
-  - `validPhoneNumberLowestBoundaryTest(Highest)`
-  - `validPhoneNumberHighestBoundaryTest(Highest)`
-  - `invalidPhoneNumberTest(Medium)`
-  - `alphaNumericPhoneNumberTest(High)`
-  - `validPassword&ConfirmPasswordLowestBoundaryTest(Highest)`
-  - `validPassword&ConfirmPasswordHighestBoundaryTest(Highest)`
-  - `invalidLongPassword&ConfirmPasswordTest(Highest)`
-  - `password&ConfirmPasswordIsNotVisibleTest(Highest)`
-  - `wrongConfirmPasswordTypedTest(High)`
-- `billingAddressTests(Highest)`
-  - `validCompanyLowestBoundaryTest(Medium)`
-  - `validCompanyHighestBoundaryTest(Medium)`
-  - `invalidCompanyErrorMessageTest(Medium)`
-  - `validAddressLowestBoundaryTest(Highest)`
-  - `validAddressHighestBoundaryTest(Highest)`
-  - `invalidAddressErrorMessageTest(Highest)`
-  - `validCityLowestBoundaryTest(High)`
-  - `validCityHighestBoundaryTest(High)`
-  - `invalidCityErrorMessageTest(High)`
-  - `validPostCodeLowestBoundaryTest(High)`
-  - `validPostCodeHighestBoundaryTest(High)`
-  - `invalidPostCodeErrorMessageTest(Medium)`
-  - `countryDropDownDisplaysAllSupportedCountriesTest(High)`
-  - `regionStateDisplayedByCountryTest(High)`
-- `shippingAddressFormDisplayedWhenMyDeliverAndBillingAddressSameCheckBoxUncheckedTest(High)`
-- `cashOnDeliveryOptionTest(Highest)`
-- `flatShippingRateAppliedAsPerCountryTest(Highest)`
-- `imageProductNameQuantityUnitPriceTotalDisplayedCorrectlyTest(Highest)`
-- `quantityRefreshButtonTest(High)`
-- `checkingOutWithMultipleSameItemsTest(High)`
-- `checkingOutWithMultipleDifferentItemsTest(High)`
-- `unitAndTotalPriceUpdatedWhenQuantityUpdatedTest(Highest)`
-- `useCouponCodePlusButtonTest(Medium)`
-- `useCouponCodeValidCouponTest(Medium)`
-- `useCouponCodeInvalidCouponTest(Medium)`
-- `useCouponCodeMaxCharacterTest(Medium)`
-- `useGiftCertificateValidCouponTest(Medium)`
-- `useGiftCertificateInvalidCouponTest(Medium)`
-- `useGiftCertificateMaxCharacterTest(Medium)`
-- `useGiftCertificateWithCouponCodeTest(Medium)`
-- `flatShippingRateDisplaysCorrectWhenAppliedTest(Highest)`
-- `vatTaxCalculatedCorrectlyAsPerCountryTest(Highest)`
-- `addingValidCommentLowestBoundaryTest(Low)`
-- `addingValidCommentLowestBoundaryTest(Low)`
-- `addingInvalidCommentTest(Low)`
-- `proceedCheckOutWithoutAgreeTermsAndPrivacyPolicyTest(Highest)`
-
-### Confirm Order Page
-
-- `productNameModelQuantityPriceTotalTest(Highest)`
-- `shippingAddressMatchUserAddressTest(Highest)`
-- `shippingMethodTest(Highest)`
-- `editButtonNavigatesToPreviousPageTest(Highest)`
-- `successMessageAfterConfirmOrderTest(Highest)*`
+1. Open the project in IntelliJ.
+2. Confirm JDK 11 is configured in your environment and load maven.
+3. Adjust the browser preference (Chrome or others) in the properties file.
+4. Execute the test suite "seleniumRunBat.bat" using JUnit 5.
+5. Html report will be auto generated in target/site/surefire-report.html
