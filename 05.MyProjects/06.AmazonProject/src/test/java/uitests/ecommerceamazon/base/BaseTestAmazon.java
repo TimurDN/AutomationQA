@@ -22,9 +22,9 @@ public class BaseTestAmazon {
 
     }
 
-//    @AfterEach
-//    public void tearDown() {
-//        UserActions.quitDriver();
-//    }
+    @AfterEach
+    public void tearDown() {
+        UserActions.quitDriver();
+    }
 }
 
