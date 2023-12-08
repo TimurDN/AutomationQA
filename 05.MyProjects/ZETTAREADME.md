@@ -19,7 +19,7 @@ This folder houses the Amazon Project tasks, including Task1, Task2, Task3, and 
 3. **Task3:** [Task3 Branch](https://github.com/TimurDN/AutomationQA/tree/Task3)
    - For Task3, switch to the corresponding branch to find comprehensive instructions and details.
 
-4. **SecurityTesting:** [SecurityTesting Branch](#)
+4. **SecurityTesting:** [SecurityTesting Branch](https://github.com/TimurDN/AutomationQA/tree/SecurityAdditionalTask)
    - Additional task focused on Security Testing. Switch to the SecurityTesting branch for specific instructions.
 
 **Note:** Open the project with IntelliJ IDEA and navigate through branches to view different tasks.
