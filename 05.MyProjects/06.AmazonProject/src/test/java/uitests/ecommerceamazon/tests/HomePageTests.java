@@ -19,7 +19,7 @@ public class HomePageTests extends BaseTestAmazon {
 
     @Test
     public void siteCrawlShopByDepartment() throws InterruptedException {
-        ///change clicks here
+        ///will move clicks from here to pages
         homePageAmazon.homePageElements().hamburgerMenuButton().click();
         homePageAmazon.homePageElements().seeAllButtonInHamburgerMenu().click();
 
