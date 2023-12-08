@@ -33,7 +33,7 @@ The crawler keeps track of visited links and records the information in a text f
    Ensure that Selenium WebDriver and JUnit 5 are included in the project.
 
 4. **Run the test:**
-   Open the `AmazonCrawlerTest` class in `src/test/java` and run the test to initiate the site crawl.
+   Open the `AmazonCrawlerTest` class in `src/test/java` or `seleniumRunBat.bat`and run the test to initiate the site crawl.
 
 ### Results
 
