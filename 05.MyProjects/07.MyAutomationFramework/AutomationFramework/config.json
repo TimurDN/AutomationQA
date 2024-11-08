@@ -1,0 +1,10 @@
+{
+  "BrowserSettings": {
+    "Browser": "Chrome",
+    "Timeout": 30,
+    "Headless": false
+  },
+  "Application": {
+    "BaseUrl": "https://google.com"
+  }
+}

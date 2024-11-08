@@ -1,0 +1,23 @@
+# Ignore Visual Studio temporary files, build results, and
+# folders related to source control
+.vs/
+bin/
+obj/
+
+# Ignore other specific IDE files if needed
+*.user
+*.suo
+*.vscode/
+
+# Ignore other specific configuration files
+*.log
+*.tlog
+*.cache
+*.pdb
+
+# Ignore publish output folder (for web projects)
+PublishOutput/
+
+# Ignore config files that may contain sensitive data
+appsettings*.json
+secrets.json
