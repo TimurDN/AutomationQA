@@ -34,3 +34,6 @@
 
 # Mac OS
 .DS_Store
+
+# Visual Studio
+.vs/
