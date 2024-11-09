@@ -1,18 +1,29 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using AutomationFramework.Interfaces;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 
 namespace AutomationFramework.Helpers
 {
-    public static class ConfigManager
+    public class ConfigManager : IConfigManager
     {
-        private static readonly Lazy<IConfiguration> _configuration = new Lazy<IConfiguration>(() => LoadConfig());
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<ConfigManager> _logger;
 
-        private static IConfiguration LoadConfig()
+        public ConfigManager(ILogger<ConfigManager> logger = null)
+        {
+            _logger = logger;
+            _configuration = LoadConfig();
+        }
+
+        private IConfiguration LoadConfig()
         {
             try
             {
                 string environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+                _logger?.LogInformation($"Loading configuration for environment: {environment}");
+
 
                 return new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
@@ -22,16 +33,29 @@ namespace AutomationFramework.Helpers
             }
             catch (FileNotFoundException ex)
             {
+                _logger?.LogError(ex, "Configuration file not found in the specified path.");
                 throw new FileNotFoundException("Configuration file not found in the specified path.", ex);
             }
             catch (Exception ex)
             {
+                _logger?.LogError(ex, "Error loading configuration.");
                 throw new Exception("Error loading configuration", ex);
             }
         }
 
-        public static T GetValue<T>(string key) => _configuration.Value.GetValue<T>(key);
+        public T GetValue<T>(string key)
+        {
+            try
+            {
+                return _configuration.GetValue<T>(key);
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogError(ex, $"Failed to retrieve configuration value for key: {key}");
+                throw;
+            }
+        }
 
-        public static IConfiguration Configuration => _configuration.Value;
+        public IConfiguration Configuration => _configuration;
     }
 }
