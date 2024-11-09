@@ -22,6 +22,8 @@ namespace AutomationFramework.Helpers
             try
             {
                 string environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Production";
+                _logger?.LogInformation($"Loading configuration for environment: {environment}");
+
 
                 return new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())

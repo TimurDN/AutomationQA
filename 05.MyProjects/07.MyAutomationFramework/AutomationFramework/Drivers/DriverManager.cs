@@ -26,6 +26,8 @@ namespace AutomationFramework
             string browser = _configManager.GetValue<string>("BrowserSettings:Browser")?.ToLower() ?? "chrome";
             bool headless = _configManager.GetValue<bool>("BrowserSettings:Headless");
 
+            Console.WriteLine($"Initializing WebDriver for {browser} in {(headless ? "headless" : "headed")} mode.");
+
             _driver = browser switch
             {
                 "chrome" => CreateChromeDriver(headless),

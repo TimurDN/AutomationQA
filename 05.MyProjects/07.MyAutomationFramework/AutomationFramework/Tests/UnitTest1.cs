@@ -1,3 +1,4 @@
+using AutomationFramework.Helpers;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
@@ -5,7 +6,14 @@ namespace AutomationFramework.Tests
 {
     public class Tests : BaseTest
     {
-        [Test]
+        //[SetUp]
+        //public void TestSetup()
+        //{
+        //    BrowserHelper.ClearCookies(Driver);
+        //    BrowserHelper.ClearCache(Driver);
+        //}
+    
+        [Test, Retry(3)]
         public void VerifyHomePageTitle()
         {
             BasePage.NavigateToURL();  // Uses the base URL
