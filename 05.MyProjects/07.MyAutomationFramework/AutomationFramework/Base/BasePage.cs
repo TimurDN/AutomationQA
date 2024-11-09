@@ -1,23 +1,20 @@
 ﻿using AutomationFramework.Helpers;
+using AutomationFramework.Interfaces;
 using OpenQA.Selenium;
 
 namespace AutomationFramework
 {
     public class BasePage
     {
-        // Keeps WebDriver encapsulated within BasePage
         private readonly IWebDriver _driver;
+        private readonly string _defaultUrl;
 
-        // Holds the default URL from configuration, not exposed to outside classes
-        private readonly string _defaultUrl = ConfigManager.GetValue<string>("Application:BaseUrl");
-
-        // Constructor is public to allow instantiation of BasePage by other parts of the framework
-        public BasePage(IWebDriver driver)
+        public BasePage(IWebDriver driver, string defaultUrl)
         {
             _driver = driver;
+            _defaultUrl = defaultUrl;
         }
 
-        // Public methods to allow navigation to the default or a specific URL
         public BasePage NavigateToURL()
         {
             _driver.Navigate().GoToUrl(_defaultUrl);
@@ -30,7 +27,6 @@ namespace AutomationFramework
             return this;
         }
 
-        // Public method to dismiss a pop-up, accessible to other classes
         public BasePage DismissPopUp()
         {
             // Code to handle pop-up if needed

@@ -1,4 +1,5 @@
 ﻿using AutomationFramework.Helpers;
+using AutomationFramework.Interfaces;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using OpenQA.Selenium;
@@ -9,21 +10,26 @@ namespace AutomationFramework
     [TestFixture]
     public abstract class BaseTest
     {
-        // Allows access to the WebDriver instance in derived test classes
-        protected IWebDriver Driver;
+        protected IWebDriver Driver;           // Allows access to the WebDriver instance in derived test classes
+        protected BasePage BasePage;           // Provides base navigation and page-level interactions
+        private readonly IConfigManager ConfigManager; // Configuration manager instance
 
-        // Provides base navigation and page-level interactions for derived test classes
-        protected BasePage BasePage;
+        public BaseTest()
+        {
+            ConfigManager = new ConfigManager(); // Initialize ConfigManager
+        }
 
         [SetUp]
         public void Setup()
         {
             // Initialize WebDriver through DriverManager
-            Driver = new DriverManager().GetDriver();
+            var driverManager = new DriverManager(ConfigManager);
+            Driver = driverManager.GetDriver();
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ConfigManager.GetValue<int>("BrowserSettings:Timeout"));
 
-            // Initialize BasePage with the driver
-            BasePage = new BasePage(Driver);
+            // Retrieve the URL directly from ConfigManager for BasePage
+            string baseUrl = ConfigManager.GetValue<string>("Application:BaseUrl");
+            BasePage = new BasePage(Driver, baseUrl);
         }
 
         [TearDown]
@@ -38,12 +44,10 @@ namespace AutomationFramework
             }
             catch (Exception ex)
             {
-                // Log the exception if screenshot capture fails
                 Console.WriteLine($"Failed to capture screenshot: {ex.Message}");
             }
             finally
             {
-                // Ensure the WebDriver is properly closed and disposed of
                 if (Driver != null)
                 {
                     Driver.Quit();
