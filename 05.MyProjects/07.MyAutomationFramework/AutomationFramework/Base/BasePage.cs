@@ -9,21 +9,17 @@ namespace AutomationFramework
         private readonly IWebDriver _driver;
         private readonly string _defaultUrl;
 
+
         public BasePage(IWebDriver driver, string defaultUrl)
         {
             _driver = driver;
             _defaultUrl = defaultUrl;
         }
+        protected IWebDriver Driver => _driver;
 
-        public BasePage NavigateToURL()
+        public BasePage NavigateToURL(string url = null)
         {
-            _driver.Navigate().GoToUrl(_defaultUrl);
-            return this;
-        }
-
-        public BasePage NavigateToURL(string url)
-        {
-            _driver.Navigate().GoToUrl(url);
+            _driver.Navigate().GoToUrl(url ?? _defaultUrl);
             return this;
         }
 

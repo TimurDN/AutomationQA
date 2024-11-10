@@ -12,24 +12,28 @@ namespace AutomationFramework
     {
         protected IWebDriver Driver;           // Allows access to the WebDriver instance in derived test classes
         protected BasePage BasePage;           // Provides base navigation and page-level interactions
-        private readonly IConfigManager ConfigManager; // Configuration manager instance
+        protected readonly IConfigManager ConfigManager; // Configuration manager instance
 
-        public BaseTest()
+        public BaseTest(IConfigManager configManager = null)
         {
-            ConfigManager = new ConfigManager(); // Initialize ConfigManager
+            ConfigManager = configManager ?? new ConfigManager(); // Initialize ConfigManager or inject
         }
 
         [SetUp]
         public void Setup()
         {
-            // Initialize WebDriver through DriverManager
-            var driverManager = new DriverManager(ConfigManager);
-            Driver = driverManager.GetDriver();
-            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ConfigManager.GetValue<int>("BrowserSettings:Timeout"));
+            InitializeDriver();
 
             // Retrieve the URL directly from ConfigManager for BasePage
             string baseUrl = ConfigManager.GetValue<string>("Application:BaseUrl");
             BasePage = new BasePage(Driver, baseUrl);
+        }
+
+        private void InitializeDriver()
+        {
+            var driverManager = new DriverManager(ConfigManager);
+            Driver = driverManager.GetDriver();
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(ConfigManager.GetValue<int>("BrowserSettings:Timeout"));
         }
 
         [TearDown]
@@ -52,6 +56,10 @@ namespace AutomationFramework
                 {
                     Driver.Quit();
                     Driver.Dispose();
+                }
+                else
+                {
+                    Console.WriteLine("Driver was not initialized.");
                 }
             }
         }

@@ -43,28 +43,36 @@ namespace AutomationFramework
         private void ConfigureDriver(IWebDriver driver)
         {
             driver.Manage().Window.Maximize();
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(_configManager.GetValue<int>("BrowserSettings:Timeout"));
+
+            // Retrieve timeout from the configuration file
+            int timeout = _configManager.GetValue<int>("BrowserSettings:Timeout");
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(timeout);
         }
 
         private IWebDriver CreateChromeDriver(bool headless)
         {
             var options = new ChromeOptions();
-            if (headless) options.AddArgument("headless");
+            ConfigureOptions(options, headless);
             return new ChromeDriver(options);
         }
 
         private IWebDriver CreateFirefoxDriver(bool headless)
         {
             var options = new FirefoxOptions();
-            if (headless) options.AddArgument("--headless");
+            ConfigureOptions(options, headless);
             return new FirefoxDriver(options);
         }
 
         private IWebDriver CreateEdgeDriver(bool headless)
         {
             var options = new EdgeOptions();
-            if (headless) options.AddArgument("headless");
+            ConfigureOptions(options, headless);
             return new EdgeDriver(options);
+        }
+
+        private void ConfigureOptions(dynamic options, bool headless)
+        {
+            if (headless) options.AddArgument("headless");
         }
 
         public void Dispose()
